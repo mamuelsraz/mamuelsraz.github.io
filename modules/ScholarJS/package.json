@@ -1,0 +1,31 @@
+{
+  "name": "scholar",
+  "version": "1.0.0",
+  "description": "A parser for Google Scholar, written in JavaScript.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toolbuddy/ScholarJS"
+  },
+  "keywords": [
+    "ScholarJS"
+  ],
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yung-Sheng Lu",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.3.0",
+    "commander": "^2.12.2",
+    "jssoup": "0.0.6",
+    "node-read": "^0.1.7",
+    "request": "^2.83.0",
+    "striptags": "^3.1.1",
+    "throttled-queue": "^1.0.5"
+  },
+  "bin": {
+    "scholar": "main.js"
+  }
+}
