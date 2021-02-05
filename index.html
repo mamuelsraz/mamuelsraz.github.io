@@ -1,76 +1,25 @@
 <!DOCTYPE html>
-<html lang="cs">
-
-<head>
-    <script type="module" src="main.js"></script>
-    <link rel="stylesheet" href="styles.css">
-    <title>Patrik Mráz</title>
-</head>
-
-<body>
-    <div class="topnav">
-        <img src="foto.jpg" alt="fotka">
-        <a href="#publications">Publications</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
-        <a href="#home">Home</a>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | gay jam h</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Build web.json", {onProgress: UnityProgress});
+    </script>
+  </head>
+  <body>
+    <div class="webgl-content">
+      <div id="unityContainer" style="width: 960px; height: 600px"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+        <div class="title">gay jam h</div>
+      </div>
     </div>
-    <div class="main">
-        <div class="normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-            <br>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            <br>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
-            <br>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            <br>Excepteur sint occaecat cupidatat non proident
-            <br> , sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </div>
-        <div class="normal" id="home">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-            <br>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            <br>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
-            <br>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            <br>Excepteur sint occaecat cupidatat non proident
-            <br>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            <br>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
-            <br>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            <br>Excepteur sint occaecat cupidatat non proident
-            <br> , sunt in culpa qui officia deserunt mollit anim id est laborum.
-            <br>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            <br>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
-            <br>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            <br>Excepteur sint occaecat cupidatat non proident
-            <br> , sunt in culpa qui officia deserunt mollit anim id est laborum.
-            <br>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            <br>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
-            <br>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            <br>Excepteur sint occaecat cupidatat non proident
-            <br> , sunt in culpa qui officia deserunt mollit anim id est laborum.
-            <br> , sunt in culpa qui officia deserunt mollit anim id est laborum.
-            <br>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            <br>Excepteur sint occaecat cupidatat non proident
-            <br>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            <br>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
-            <br>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            <br>Excepteur sint occaecat cupidatat non proident
-            <br> , sunt in culpa qui officia deserunt mollit anim id est laborum.
-            <br>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            <br>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
-            <br>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            <br>Excepteur sint occaecat cupidatat non proident
-            <br> , sunt in culpa qui officia deserunt mollit anim id est laborum.
-            <br>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            <br>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
-            <br>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            <br>Excepteur sint occaecat cupidatat non proident
-            <br> , sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </div>
-    </div>
-</body>
-
+  </body>
 </html>
