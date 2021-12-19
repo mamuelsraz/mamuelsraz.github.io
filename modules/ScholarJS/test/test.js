@@ -1,1 +1,0 @@
-const scholar = require('../main');

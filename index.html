@@ -1,25 +1,79 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | gay jam h</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
-    <script src="TemplateData/UnityProgress.js"></script>
-    <script src="Build/UnityLoader.js"></script>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>konference</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="topnav.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="banner">
+            <div><img src="logo_white.png" alt="logo" class="header_logo"></div>
+            <div>
+                <h1>BIOGEOGRAPHY OF THE CARPATHIANS</h1>
+                <h2>3RD INTERDISCIPLINARY SYMPOSIUM</h2>
+                <h2>8 - 10 September 2022, Prague</h2>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="topnav" id="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#venue">Venue</a>
+            <a href="#registration">Registration</a>
+            <a href="#about">Programme</a>
+            <a href="#about">Scientific & Organising commetee</a>
+            <a href="#about">Contact</a>
+            <a href="javascript:void(0);" class="icon" onclick="ResponsiveNav()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+        <div class="block">
+            The third interdisciplinary symposium “Biogeography of the Carpathians” will be held in September 2022 in
+            Prague, Czechia.
+            The third edition is a contituation of symposia organised in Kraków, Poland (2013) and Cluj, Romania (2017),
+            and represents a platform for free exchange of ideas, research advances and future research directions
+            shared by scientists connected by their common interests on diverse aspects of the Carpathian biodiversity.
+        </div>
+        <div class="block" style="height:5000px">
+            The forum offers an excellent opportunity for scientists studying the biodiversity and evolution of the
+            Carpathian biota to share their most recent knowledge and to interact with others having similar interests.
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
+
     <script>
-      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/modules.json", {onProgress: UnityProgress});
+
+        // Get the navbar
+        var navbar = document.getElementById("navbar");
+
+        /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+        function ResponsiveNav() {
+            if (navbar.className === "topnav") {
+                navbar.className += " responsive";
+            } else {
+                navbar.className = "topnav";
+            }
+        }
+
     </script>
-  </head>
-  <body>
-    <div class="webgl-content">
-      <div id="unityContainer" style="width: 960px; height: 600px"></div>
-      <div class="footer">
-        <div class="webgl-logo"></div>
-        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
-        <div class="title">gay jam h</div>
-      </div>
-    </div>
-  </body>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script> AOS.init();</script>
+</body>
+
 </html>
