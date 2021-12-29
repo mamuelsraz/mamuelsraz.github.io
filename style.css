@@ -77,8 +77,8 @@ li {
 .header_logo {
     max-height: 150px;
     margin-right: 20px;
-    /*-webkit-filter: drop-shadow(3px 3px 0px black);
-    filter: drop-shadow(3px 3px 0px black);*/
+    /*webkit-filter: drop-shadow(1px 1px 0px white);*/
+    filter: drop-shadow(1px 1px 0px white);
 }
 
 .horFlex {
