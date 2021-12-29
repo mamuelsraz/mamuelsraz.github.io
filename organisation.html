@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>organisation</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="topnav.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <!--navbar-->
+        <div class="topnav" id="navbar">
+            <a href="index.html">Home</a>
+            <a href="venue.html">Venue</a>
+            <a href="#registration">Registration</a>
+            <a href="#about">Programme</a>
+            <a href="organisation.html" class="active">Symposium organization</a>
+            <a href="#about">Contact</a>
+            <a href="javascript:void(0);" class="icon" onclick="ResponsiveNav()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+        
+        <div class="block"><h1 style="color: black;">Symposium organization</h1></div>
+        <div class="block, horFlex">
+            <div class="verFlex">
+                <h3>organized by</h3>
+                <img width="80%" style="margin: 10px;" src="https://pbs.twimg.com/profile_images/1301133378830446592/2WgT7yYR_400x400.jpg" alt="logo">
+                <h3>Faculty of Science, Charles University, Prague</h3>
+            </div>
+            <div class="verFlex">
+                <h3>under the auspices of</h3>
+                <img  width="80%" style="border-radius: 50%; margin: 10px;" src="https://iforum.cuni.cz/IFORUM-10865-version1-Zima1.JPG" alt="Jiri Zima">
+                <h3>Prof. Jiří Zima, Dean of the Faculty</h3>
+            </div>
+            <div class="verFlex">
+                <h3>Coorganized & Financially supported by</h3>
+                <img  width="80%" style="margin: 10px;" src="https://www.jednapriroda.cz/wp-content/uploads/2020/08/logo_AJ_obdelnik_bily-01.jpg" alt="Jiri Zima">
+            </div>
+        </div>
+
+        <div style="height: 1000px;"></div>
+    </main>
+
+
+
+    <script>
+
+        // Get the navbar
+        var navbar = document.getElementById("navbar");
+
+        /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+        function ResponsiveNav() {
+            if (navbar.className === "topnav") {
+                navbar.className += " responsive";
+            } else {
+                navbar.className = "topnav";
+            }
+        }
+
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script> AOS.init();</script>
+</body>

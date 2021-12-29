@@ -1,31 +1,13 @@
-.block {
-    padding-left: 2cm;
-    padding-right: 2cm;
-    padding-top: 1cm;
-    padding-bottom: 1cm;
+html {
+    scroll-behavior: smooth;
 }
 
-.negative {
-    background-color: black;
-    color: white;
-}
-
-.banner {
-    height:100vh;
-    background-image: url("bkg3.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-
-    padding-left: 10%;
-    padding-right: 10%;
-
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    text-align: left;
-    flex-direction: row;
+body {
+    font-family: 'Outfit', serif;
+    font-size: 22px;
+    font-weight: 200;
+    text-align: justify;
+    /* position: relative; */
 }
 
 h1 {
@@ -36,13 +18,6 @@ h1 {
     margin-bottom: 10px;
 }
 
-.header_logo {
-    max-height: 150px;
-    margin-right: 20px;
-    /*-webkit-filter: drop-shadow(3px 3px 0px black);
-    filter: drop-shadow(3px 3px 0px black);*/
-}
-
 h2 {
     position: relative;
     font-size: 25px;
@@ -51,19 +26,67 @@ h2 {
     /*text-shadow: 2px 2px 0px black;*/
 }
 
-body {
-    font-family: 'Outfit', serif;
-    font-size: 18px;
-    font-weight: 200;
-    text-align: justify;
-    /* position: relative; */
+h3 {
+    font-size: 45px;
+    font-weight: 600;
 }
 
-h3 {
-    text-shadow: 1px 1px 0px black;
-    font-size: 40px;
-    font-weight: 600;
-    margin-bottom: 1cm;
+h4 {
+    font-size: 30px;
+    font-weight: 400;
+}
+
+b {
     color: #7086be;
-    text-align: center;
+    font-weight: 600;
+}
+
+.block {
+    padding-left: 3cm;
+    padding-right: 3cm;
+    padding-top: 1cm;
+    padding-bottom: 1cm;
+}
+
+.negative {
+    background-color: black;
+    color: white;
+}
+
+.banner {
+    height: 100vh;
+    background-image: url("bkg3.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    padding-left: 10%;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    flex-direction: row;
+}
+
+.header_logo {
+    max-height: 150px;
+    margin-right: 20px;
+    /*-webkit-filter: drop-shadow(3px 3px 0px black);
+    filter: drop-shadow(3px 3px 0px black);*/
+}
+
+.horFlex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.verFlex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
 }
