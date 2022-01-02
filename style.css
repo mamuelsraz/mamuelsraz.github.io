@@ -78,7 +78,8 @@ li {
     max-height: 150px;
     margin-right: 20px;
     /*webkit-filter: drop-shadow(1px 1px 0px white);*/
-    filter: drop-shadow(1px 1px 0px white);
+    /*filter: drop-shadow(1px 1px 0px white);*/
+    filter: drop-shadow(1px 1px 5px black);
 }
 
 .horFlex {
@@ -93,4 +94,11 @@ li {
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
+}
+
+.case {
+    background-color: white;
+    color: black;
+    padding: 30px;
+    margin-bottom: 20px;
 }
