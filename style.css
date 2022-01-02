@@ -99,6 +99,15 @@ li {
 .case {
     background-color: white;
     color: black;
-    padding: 30px;
+    padding: 10px;
     margin-bottom: 20px;
 }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  .grid-item {
+    padding: 20px;
+    /*text-align: center;*/
+  }
