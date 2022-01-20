@@ -41,6 +41,14 @@ b {
     font-weight: 600;
 }
 
+a {
+    color: #7086be;
+}
+
+a:visited {
+    color: #5c5f83;
+}
+
 li {
     margin: 20px 0;
 }
@@ -79,7 +87,6 @@ li {
     margin-right: 20px;
     /*webkit-filter: drop-shadow(1px 1px 0px white);*/
     /*filter: drop-shadow(1px 1px 0px white);*/
-    filter: drop-shadow(1px 1px 5px black);
 }
 
 .horFlex {
@@ -106,8 +113,14 @@ li {
 .grid-container {
     display: grid;
     grid-template-columns: auto auto;
-  }
-  .grid-item {
+}
+
+.grid-item {
     padding: 20px;
     /*text-align: center;*/
-  }
+}
+
+.pad_top {
+    padding: 0px;
+    padding-top: 20px;
+}
