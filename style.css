@@ -43,10 +43,11 @@ b {
 
 a {
     color: #7086be;
+    text-decoration-thickness: 3px;
 }
 
 a:visited {
-    color: #5c5f83;
+    color: #7086be;
 }
 
 li {
@@ -123,4 +124,19 @@ li {
 .pad_top {
     padding: 0px;
     padding-top: 20px;
+}
+
+.guest-container
+{
+    display: flex;
+    padding: 20px 20px 20px 20px;
+    align-items: center;
+    background-color: white;
+    color: black;
+    margin-bottom: 30px;
+}
+
+.guest-container > img{
+    max-height: 100px;
+    margin-right: 50px;
 }
