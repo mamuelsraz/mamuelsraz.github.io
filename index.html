@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="topnav.css">
+    <link rel="stylesheet" href="responsiveness.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
@@ -19,7 +21,7 @@
 <body>
     <header>
         <div class="banner">
-            <div><br><img src="logo.png" alt="logo" class="header_logo"></div>
+            <div><br><img src="logo.png" alt="logo" class="header-logo"></div>
             <div>
                 <h1>BIOGEOGRAPHY OF THE CARPATHIANS</h1>
                 <h2>3RD INTERDISCIPLINARY SYMPOSIUM</h2>
@@ -83,10 +85,10 @@
         <div class="block" id="Programme">
             <h3>Programme</h3>
             <div class="grid-container">
-                <div class="grid-item, pad_top"><b>12 & 13 September</b></div>
-                <div class="grid-item, pad_top">talks</div>
-                <div class="grid-item, pad_top"><b>14 September</b></div>
-                <div class="grid-item, pad_top">postsymosium excursion (vicinity of Prague)</div>
+                <div class="grid-item, pad-top"><b>12 & 13 September</b></div>
+                <div class="grid-item, pad-top">talks</div>
+                <div class="grid-item, pad-top"><b>14 September</b></div>
+                <div class="grid-item, pad-top">postsymosium excursion (vicinity of Prague)</div>
             </div>
         </div>
         <!--SPEAKERS----------------------------------------------------------------->
@@ -94,52 +96,53 @@
             <h3>Invited speakers</h3>
             <p></p>
             <div>
-                <div class="guest-container" data-aos="fade-left">
+                <div class="guest-container" data-aos="fade-up">
                     <img src="Karel-Chobot.jpg" alt="Karel Chobot">
                     <h4><b><a href="https://www.researchgate.net/profile/Karel-Chobot">Karel Chobot</a></b> <br>
                         Nature Conservation Agency of the Czech Republic, Prague, Czechia</h4>
                 </div>
-                <div class="guest-container" data-aos="fade-right">
+                <div class="guest-container" data-aos="fade-up">
                     <img src="Michal-Grabowski-6.jpg" alt="Michal Grabowski">
                     <h4><b><a href="https://www.researchgate.net/profile/Michal-Grabowski-6">Michal Grabowski</a></b>
                         <br>
-                        University of Łódź, Łódź, Poland</h4>
+                        University of Łódź, Łódź, Poland
+                    </h4>
                 </div>
-                <div class="guest-container" data-aos="fade-left">
+                <div class="guest-container" data-aos="fade-up">
                     <img src="Lubos-Halada.jpg" alt="Ľuboš Halada">
                     <h4><b><a href="https://www.researchgate.net/profile/Lubos-Halada">Ľuboš Halada</a></b> <br>
                         Institute of Landscape Ecology, Bratislava, Slovakia</h4>
                 </div>
-                <div class="guest-container" data-aos="fade-right">
+                <div class="guest-container" data-aos="fade-up">
                     <img src="Michal-Horsak.jpg" alt="Michal Horsák">
                     <h4><b><a href="https://www.researchgate.net/profile/Michal-Horsak">Michal Horsák</a></b> <br>
                         Masaryk Univesity, Brno, Czechia</h4>
                 </div>
-                <div class="guest-container" data-aos="fade-left">
+                <div class="guest-container" data-aos="fade-up">
                     <img src="Veronika-Konecna-2.jpg" alt="Veronika Konečná">
                     <h4><b><a href="https://www.researchgate.net/profile/Veronika-Konecna-2">Veronika Konečná</a></b>
                         <br>
-                        Charles University, Prague, Czechia</h4>
+                        Charles University, Prague, Czechia
+                    </h4>
                 </div>
             </div>
         </div>
         <!--VENUE----------------------------------------------------------------->
         <div class="block" id="Venue">
-            <div class="horFlex">
-                <div>
+            <div class="venue">
+                <div class="verFlex">
                     <h3 style="margin-bottom: 1cm;">Venue</h3>
                     <h4>Symposium venue</h4>
-                    <p>
-                    <p>Velká geologická posluchárna Lecture Hall</p>
-                    <p>Faculty of Science, Charles University</p>
-                    <p>Albertov 6</p>
-                    <p>Prague, Czech Republic</p>
-                    <p>50°4'8.174"N, 14°25'28.102"E</p>
-                    </p>
+                    <br>
+                    <span>Velká geologická posluchárna Lecture Hall</span>
+                    <span>Faculty of Science, Charles University</span>
+                    <span>Albertov 6</span>
+                    <span>Prague, Czech Republic</span>
+                    <span>50°4'8.174"N, 14°25'28.102"E</span>
                 </div>
-                <img src="konferencna-hala.jfif" alt="hall" data-aos="fade-left">
+                <img src="konferencna-hala.jfif" alt="hall" data-aos="fade-up">
             </div>
-            <!--TRANSPORT----------------------------------------------------------------->
+            <br>
             <h4>Transport</h4>
             <p>
                 <b>Arrival by plane to Václav Havel international airport<br></b>
@@ -173,25 +176,23 @@
         <!--ORGANISATION----------------------------------------------------------------->
         <div class="block negative" id="Organisation">
             <h3>Symposium organization</h3>
-            <div style="margin-top: 20px;">
-                <h4 style="text-align: center;">
+            <p></p>
+            <div style="text-align: center;">
+                <div class="case" data-aos="fade-up">
+                    <h4 style="margin-block-end: 0.5em;">Organized by</h4>
+                    <img src="natur.cuni.logo_en.svg" alt="Faculty of Science, Charles University, Prague">
+                    <h4 class="case-hidden"><b>Faculty of Science, Charles University, Prague</b></h4>
+                </div>
+                <div class="case" data-aos="fade-up">
+                    <h4>under the auspices of </h4>
+                    <h4><b>Prof. Jiří Zima, Dean of the Faculty</b></h4>
 
-                    <div data-aos="fade-left" class="case">
-                        <p style="margin-block-end: 0.5em;">Organized by</p>
-                        <img src="natur.cuni.logo_en.svg" alt="Faculty of Science, Charles University, Prague"
-                            style="max-height: 5cm;">
-                    </div>
-                    <div class="case">
-                        <p data-aos="fade-right">under the auspices of <br> <b>Prof. Jiří Zima, Dean of the Faculty</b>
-                        </p>
-                    </div>
-                    <div data-aos="fade-left" class="case">
-                        <p style="margin-block-end: 0.5em;">Coorganized & Financially supported by</p>
-                        <img src="nature_conservation_logo_en.jpg"
-                            alt="Nature Conservation Agency of the Czech Republic" style="max-height: 5cm;">
-                    </div>
-
-                </h4>
+                </div>
+                <div class="case" data-aos="fade-up">
+                    <h4 style="margin-block-end: 0.5em;">Coorganized & Financially supported by</h4>
+                    <img src="nature_conservation_logo_en.jpg" alt="Nature Conservation Agency of the Czech Republic">
+                    <h4 class="case-hidden"><b>Nature Conservation Agency of the Czech Republic</b></h4>
+                </div>
             </div>
 
             <h4 style="margin-top: 1cm;">Scientific & Organizing Committee</h4>
@@ -240,7 +241,7 @@
             </div>
         </div>
         <!--CONTACT----------------------------------------------------------------->
-        <div class="block" id="Contact">
+        <div class="block" id="Contact" style="text-align: left;">
             <h3>Contact</h3>
             <p><b>Patrik Mráz:</b> mrazpat(at)natur.cuni.cz | +420 221 951 642</p>
             <p><b>Viera Mrázová:</b> viera.mrazova(at)natur.cuni.cz | +420 221 951 646</p>
