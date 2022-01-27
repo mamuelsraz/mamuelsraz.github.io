@@ -155,7 +155,8 @@ header {
 
 .guest-container>img {
     max-height: 100px;
-    margin-right: 50px;
+    margin-right: 20px;
+    border-radius: 50%;
 }
 
 .venue {
