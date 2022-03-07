@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3782603557
+CRC: 2431333638
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 846e03833d37d9f48fa6af731d5ff6bb
+    Hash: cc4f2605c7f7c1436bc077dc6d2b5eaa
   TypeTreeHash:
     serializedVersion: 2
     Hash: 92cf93cd9d57acc6b2d3f96498557ad9
@@ -22,7 +22,6 @@ SerializeReferenceClassIdentifiers:
   ClassName: NameInLanguage
 Assets:
 - Assets/Resources/ARObjects/swan.asset
-- Assets/Resources/ARObjects/something.asset
 - Assets/Resources/ARObjects/monet.asset
 - Assets/Resources/ARObjects/duck.asset
 Dependencies:
