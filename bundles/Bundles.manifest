@@ -1,0 +1,15 @@
+ManifestFileVersion: 0
+CRC: 3321982704
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: duck
+      Dependencies: {}
+    Info_1:
+      Name: monet
+      Dependencies: {}
+    Info_2:
+      Name: list
+      Dependencies:
+        Dependency_0: duck
+        Dependency_1: monet
