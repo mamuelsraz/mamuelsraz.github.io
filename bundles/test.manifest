@@ -1,0 +1,24 @@
+ManifestFileVersion: 0
+CRC: 3677870935
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 1144ec551cf2f8c9af933766dbdafc36
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 86dc466370c299a1f301ffbad47f8338
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 81ed7e55383754b42ad2a1489464ad13, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Prefabs/test.prefab
+Dependencies:
+- D:/42079/Projects/_Github/ar-vyuka/Assets/Bundles/juice
