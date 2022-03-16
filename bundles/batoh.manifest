@@ -1,0 +1,35 @@
+ManifestFileVersion: 0
+CRC: 3754984410
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: c0415d86d6cf9013c0414932896a89d2
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 1fa84518f4804b69599d859838526740
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Textures/Batoh/Batoh_None_Roughness.png
+- Assets/Materials 1/Batoh.mat
+- Assets/Textures/Batoh/Batoh_None_Metallic.png
+- Assets/Textures/Batoh/Batoh_None_BaseColor.png
+- Assets/Prefabs/Batoh.prefab
+Dependencies: []

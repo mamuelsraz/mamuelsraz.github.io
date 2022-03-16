@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 504536573
+CRC: 2964185571
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 015a4bd64c0fc77d4e7ae2ce14338193
+    Hash: 9bf2984a7d3bb50e69134c5ab47ed8cb
   TypeTreeHash:
     serializedVersion: 2
     Hash: 92cf93cd9d57acc6b2d3f96498557ad9
@@ -23,7 +23,11 @@ SerializeReferenceClassIdentifiers:
 Assets:
 - Assets/Resources/ARObjects/swan.asset
 - Assets/Resources/ARObjects/monet.asset
+- Assets/Resources/ARObjects/Backpack.asset
+- Assets/Resources/ARObjects/Juice.asset
 - Assets/Resources/ARObjects/duck.asset
 Dependencies:
+- D:/42079/Projects/_Github/ar-vyuka/Assets/Bundles/batoh
 - D:/42079/Projects/_Github/ar-vyuka/Assets/Bundles/duck
+- D:/42079/Projects/_Github/ar-vyuka/Assets/Bundles/juice
 - D:/42079/Projects/_Github/ar-vyuka/Assets/Bundles/monet

@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 2016732916
+CRC: 3859741142
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -13,3 +13,11 @@ AssetBundleManifest:
       Dependencies:
         Dependency_0: duck
         Dependency_1: monet
+        Dependency_2: juice
+        Dependency_3: batoh
+    Info_3:
+      Name: juice
+      Dependencies: {}
+    Info_4:
+      Name: batoh
+      Dependencies: {}
