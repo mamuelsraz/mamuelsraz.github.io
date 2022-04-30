@@ -106,7 +106,9 @@
                 abstract, conference materials.</p>
 
             <form action="">
-                <button class="btn btn-primary" type="button" onclick="Animate()"><h4> Registration Form</h4></button>
+                <button class="btn btn-primary" type="button" onclick="Animate()">
+                    <h4> Registration Form</h4>
+                </button>
                 <div class="form-group off" id="animation">
                     <br>
                     <label for="firstName">First name*</label>
@@ -117,12 +119,23 @@
 
                     <label for="emailInput">Email adress*</label>
                     <input type="email" class="form-control" id="emailInput" placeholder="Enter email">
+                    I want to present*: 
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="presentOptions" id="nothing"
+                            value="nothing" checked>
+                        <label class="form-check-label" for="nothing">Nothing</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="presentOptions" id="poster"
+                            value="poster">
+                        <label class="form-check-label" for="poster">Poster</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="presentOptions" id="talk"
+                            value="talk">
+                        <label class="form-check-label" for="talk">Talk</label>
+                    </div>
 
-                    I want to present
-                    <input type="checkbox" id="poster">
-                    <label for="poster">Poster</label>
-                    <input type="checkbox" id="talk">
-                    <label for="talk">Talk</label>
                     <br>
                     <input type="checkbox" id="grant">
                     <label for="grant">I want to apply for a small travel grant</label>
@@ -295,7 +308,8 @@
                         <img src="nature_conservation_logo_en.jpg"
                             alt="Nature Conservation Agency of the Czech Republic">
                     </div>
-                    <h4 class="case-hidden"><b>Journal of Biogeography & Nature Conservation Agency of the Czech Republic</b></h4>
+                    <h4 class="case-hidden"><b>Journal of Biogeography & Nature Conservation Agency of the Czech
+                            Republic</b></h4>
                 </div>
             </div>
 
