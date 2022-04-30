@@ -15,8 +15,8 @@
 
 @media only screen and (max-width: 1000px) {
     .block {
-        padding-left: 1cm;
-        padding-right: 1cm;
+        padding-left: 0.5cm;
+        padding-right: 0.5cm;
     }
 
     .case-hidden {
@@ -25,6 +25,12 @@
     }
 
     .case>img {
+        position: absolute;
+        visibility: hidden;
+        max-width: 0px;
+        overflow-x: hidden
+    }
+    .case>div>img {
         position: absolute;
         visibility: hidden;
         max-width: 0px;

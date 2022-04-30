@@ -4,7 +4,7 @@ html {
 
 body {
     font-family: 'Montserrat', serif;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 300;
     text-align: justify;
     /* position: relative; */
@@ -67,6 +67,20 @@ header {
     justify-content: center;
 }
 
+p {
+    margin-top: 10px;
+}
+
+form {
+    padding: 50px;
+    background-color: white;
+    color: black;
+}
+
+input {
+    margin-bottom: 15px;
+}
+
 .block {
     padding-left: 3cm;
     padding-right: 3cm;
@@ -76,6 +90,11 @@ header {
 
 .negative {
     background-color: black;
+    background-image: url("texture-cell.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment:fixed;
     color: white;
 }
 
@@ -122,6 +141,9 @@ header {
 .case>img {
     max-height: 5cm;
 }
+.case>div>img {
+    max-height: 5cm;
+}
 
 .case-hidden {
     position: absolute;
@@ -166,4 +188,27 @@ header {
 
 .venue>div {
     margin-right: 20px;
+}
+
+#animation.on {
+    /*animation: turn_on 0.5s;*/
+    max-height: 3000px;
+}
+#animation.off {
+    /*animation: turn_off 0.5s;*/
+    max-height: 0px;
+}
+
+#animation {
+    overflow-y: hidden;
+    padding: 5px;
+}
+
+@keyframes turn_on {
+    from { max-height: 0px; }
+    to { max-height: 3000px; }
+}
+@keyframes turn_off {
+    from { max-height: 3000px;}
+    to {max-height: 0px;}
 }

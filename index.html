@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,7 +37,7 @@
     </header>
 
     <main>
-        <!--navbar-->
+        <!--navbar-------------------------------------------------------------->
         <div class="topnav" id="navbar">
             <a href="#Home" class="active">Home</a>
             <a href="#Registration">Registration</a>
@@ -78,8 +80,74 @@
         <!--REGISTRATION----------------------------------------------------------------->
         <div class="block negative" id="Registration">
             <h3>Registration</h3>
-            <p>Registration & fee details will be announced in <b>March 2022.</b> </p>
+            <p>Registration & fee details will be announced in <b>May 2022.</b> </p>
             <p>Small amount of travel grants for presenting graduate students are planed.</p>
+
+            <p>
+                <b>Conference fees: early registration – paid by 15 July 2022</b><br>
+                Regular - €140 / CZK 3500 Kc
+                <br>
+                Student (Msc & PhD) - €90 / CZK 2250 Kc
+            </p>
+            <p>
+                <b>Conference fees: late registration – paid after 15 July 2022</b><br>
+                Regular - €170 / CZK 4250 Kc
+                <br>
+                Student (Msc & PhD) - €100 / CZK 2500 Kc
+            </p>
+            <p>
+                Banquet dinner - €50 / CZK 1250 Kc <br>
+                Postsymposium excursion - €25 / CZK 500 Kc
+            </p>
+            <p>Conference fees includes: admission to the conference, refreshments during coffee breaks, book of
+                abstract, conference materials.</p>
+
+            <form action="">
+                <h4>Registration Form</h4>
+                <button class="btn btn-primary" type="button" onclick="Animate()">Open form</button>
+                <div class="form-group" id="animation">
+                    <br>
+                    <label for="firstName">First name*</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="Enter first name">
+
+                    <label for="lastName">Last name*</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="Enter last name">
+
+                    <label for="emailInput">Email adress*</label>
+                    <input type="email" class="form-control" id="emailInput" placeholder="Enter email">
+
+                    I want to present
+                    <input type="checkbox" id="poster">
+                    <label for="poster">Poster</label>
+                    <input type="checkbox" id="talk">
+                    <label for="talk">Talk</label>
+                    <br>
+                    <input type="checkbox" id="grant">
+                    <label for="grant">I want to apply for a small travel grant</label>
+                    <br>
+                    <input type="checkbox" id="student">
+                    <label for="student">I am a student</label>
+                    <br>
+                    <input type="checkbox" id="banquet">
+                    <label for="banquet">I want to attend the banquet dinner</label>
+                    <br>
+                    <input type="checkbox" id="excursion">
+                    <label for="excursion">I want to attend the postsymposium excursion</label>
+                    <br>
+                    <label for="institution">Institution*</label>
+                    <input type="text" class="form-control" id="institution" placeholder="">
+                    <label for="department">Department/Division</label>
+                    <input type="text" class="form-control" id="department" placeholder="">
+                    <label for="street">Street</label>
+                    <input type="text" class="form-control" id="street" placeholder="">
+                    <label for="city">City*</label>
+                    <input type="text" class="form-control" id="city" placeholder="">
+                    <label for="zip">Postal code</label>
+                    <input type="text" class="form-control" id="zip" placeholder="">
+                    <label for="country">Country*</label>
+                    <input type="text" class="form-control" id="country" placeholder="">
+                </div>
+            </form>
         </div>
         <!--PROGRAMME----------------------------------------------------------------->
         <div class="block" id="Programme">
@@ -88,7 +156,7 @@
                 <div class="grid-item, pad-top"><b>12 & 13 September</b></div>
                 <div class="grid-item, pad-top">talks</div>
                 <div class="grid-item, pad-top"><b>14 September</b></div>
-                <div class="grid-item, pad-top">postsymosium excursion (vicinity of Prague)</div>
+                <div class="grid-item, pad-top">post symposium excursion (vicinity of Prague)</div>
             </div>
         </div>
         <!--SPEAKERS----------------------------------------------------------------->
@@ -98,8 +166,11 @@
             <div>
                 <div class="guest-container" data-aos="fade-up">
                     <img src="Karel-Chobot.jpg" alt="Karel Chobot">
-                    <h4><b><a href="https://www.researchgate.net/profile/Karel-Chobot">Karel Chobot</a></b> <br>
-                        Nature Conservation Agency of the Czech Republic, Prague, Czechia</h4>
+                    <div>
+                        <h4><b><a href="https://www.researchgate.net/profile/Karel-Chobot">Karel Chobot</a></b></h4>
+                        <br>
+                        Nature Conservation Agency of the Czech Republic, Prague, Czechia
+                    </div>
                 </div>
                 <div class="guest-container" data-aos="fade-up">
                     <img src="Michal-Grabowski-6.jpg" alt="Michal Grabowski">
@@ -123,6 +194,21 @@
                     <h4><b><a href="https://www.researchgate.net/profile/Veronika-Konecna-2">Veronika Konečná</a></b>
                         <br>
                         Charles University, Prague, Czechia
+                    </h4>
+                </div>
+                <div class="guest-container" data-aos="fade-up">
+                    <img src="sebastien-lavergne.png" alt="Sébastien Lavergne">
+                    <h4><b><a href="http://seb.lavergne.free.fr/">Sébastien Lavergne</a></b>
+                        <br>
+                        Laboratoire d'Ecologie Alpine, Grenoble, France
+                    </h4>
+                </div>
+                <div class="guest-container" data-aos="fade-up">
+                    <img src="Katarzyna-Ostapowicz.jpg" alt="Katarzyna Ostapowicz">
+                    <h4><b><a href="https://www.researchgate.net/profile/Katarzyna-Ostapowicz">Katarzyna
+                                Ostapowicz</a></b>
+                        <br>
+                        Jagiellonian University, Kraków, Poland
                     </h4>
                 </div>
             </div>
@@ -190,8 +276,13 @@
                 </div>
                 <div class="case" data-aos="fade-up">
                     <h4 style="margin-block-end: 0.5em;">Coorganized & Financially supported by</h4>
-                    <img src="nature_conservation_logo_en.jpg" alt="Nature Conservation Agency of the Czech Republic">
-                    <h4 class="case-hidden"><b>Nature Conservation Agency of the Czech Republic</b></h4>
+                    <div>
+                        <img src="nature_conservation_logo_en.jpg"
+                            alt="Nature Conservation Agency of the Czech Republic">
+                        <img src="journal_of_biogeography_alt.png" alt="Journal of Biogeography">
+                    </div>
+                    <h4 class="case-hidden"><b>Nature Conservation Agency of the Czech Republic & Journal of
+                            Biogeography</b></h4>
                 </div>
             </div>
 
@@ -229,6 +320,10 @@
                         Botanical Garden, Babeş-Bolyai University, Cluj-Napoca
                     </div>
                     <div class="grid-item">
+                        <a href="https://www.researchgate.net/profile/Anna-Ronikier"><b>Anna Ronikier<br></b></a>
+                        Institute of Botany, Polish Academy of Sciences, Kraków
+                    </div>
+                    <div class="grid-item">
                         <a href="https://www.researchgate.net/profile/Michal-Ronikier"><b>Michał Ronikier<br></b></a>
                         Institute of Botany, Polish Academy of Sciences, Kraków
                     </div>
@@ -243,7 +338,9 @@
         <!--CONTACT----------------------------------------------------------------->
         <div class="block" id="Contact" style="text-align: left;">
             <h3>Contact</h3>
-            <p><b><a href="mailto:symposium-carpathians-2022@natur.cuni.cz">symposium-carpathians-2022(at)natur.cuni.cz</a></b></p>
+            <p><b><a
+                        href="mailto:symposium-carpathians-2022@natur.cuni.cz">symposium-carpathians-2022(at)natur.cuni.cz</a></b>
+            </p>
             <p><b>Patrik Mráz:</b> +420 221 951 642</p>
             <p><b>Viera Mrázová:</b> +420 221 951 646</p>
         </div>
@@ -270,6 +367,16 @@
     </script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script> AOS.init();</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script>
+        function Animate() {
+            var element = document.getElementById("animation");
+            element.classList.toggle("on");
+            element.classList.toggle("off");
+        }
+    </script>
 </body>
 
 </html>
