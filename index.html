@@ -4,6 +4,7 @@
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,9 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="topnav.css">
+
     <link rel="stylesheet" href="responsiveness.css">
+    <link rel="stylesheet" href="color-override.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,7 +47,7 @@
             <a href="#Programme">Programme</a>
             <a href="#Speakers">Invited speakers</a>
             <a href="#Venue">Venue</a>
-            <a href="#Organisation">Symposium organization</a>
+            <a href="#Organisation">Organization</a>
             <a href="#Contact">Contact</a>
             <a href="javascript:void(0);" class="icon" onclick="ResponsiveNav()">
                 <i class="fa fa-bars"></i>
@@ -103,9 +106,8 @@
                 abstract, conference materials.</p>
 
             <form action="">
-                <h4>Registration Form</h4>
-                <button class="btn btn-primary" type="button" onclick="Animate()">Open form</button>
-                <div class="form-group" id="animation">
+                <button class="btn btn-primary" type="button" onclick="Animate()"><h4> Registration Form</h4></button>
+                <div class="form-group off" id="animation">
                     <br>
                     <label for="firstName">First name*</label>
                     <input type="text" class="form-control" id="firstName" placeholder="Enter first name">
@@ -169,47 +171,59 @@
                     <div>
                         <h4><b><a href="https://www.researchgate.net/profile/Karel-Chobot">Karel Chobot</a></b></h4>
                         <br>
-                        Nature Conservation Agency of the Czech Republic, Prague, Czechia
+                        <b style="color: black;"> Nature Conservation Agency of the Czech Republic, Prague, Czechia</b>
                     </div>
                 </div>
                 <div class="guest-container" data-aos="fade-up">
                     <img src="Michal-Grabowski-6.jpg" alt="Michal Grabowski">
-                    <h4><b><a href="https://www.researchgate.net/profile/Michal-Grabowski-6">Michal Grabowski</a></b>
+                    <div>
+                        <h4><b><a href="https://www.researchgate.net/profile/Michal-Grabowski-6">Michal
+                                    Grabowski</a></b></h4>
                         <br>
-                        University of Łódź, Łódź, Poland
-                    </h4>
+                        <b style="color: black;"> University of Łódź, Łódź, Poland </b>
+                    </div>
                 </div>
                 <div class="guest-container" data-aos="fade-up">
                     <img src="Lubos-Halada.jpg" alt="Ľuboš Halada">
-                    <h4><b><a href="https://www.researchgate.net/profile/Lubos-Halada">Ľuboš Halada</a></b> <br>
-                        Institute of Landscape Ecology, Bratislava, Slovakia</h4>
+                    <div>
+                        <h4><b><a href="https://www.researchgate.net/profile/Lubos-Halada">Ľuboš Halada</a></b></h4>
+                        <br>
+                        <b style="color: black;"> Institute of Landscape Ecology, Bratislava, Slovakia </b>
+                    </div>
                 </div>
                 <div class="guest-container" data-aos="fade-up">
                     <img src="Michal-Horsak.jpg" alt="Michal Horsák">
-                    <h4><b><a href="https://www.researchgate.net/profile/Michal-Horsak">Michal Horsák</a></b> <br>
-                        Masaryk Univesity, Brno, Czechia</h4>
+                    <div>
+                        <h4><b><a href="https://www.researchgate.net/profile/Michal-Horsak">Michal Horsák</a></b></h4>
+                        <br>
+                        <b style="color: black;"> Masaryk Univesity, Brno, Czechia</b>
+                    </div>
                 </div>
                 <div class="guest-container" data-aos="fade-up">
                     <img src="Veronika-Konecna-2.jpg" alt="Veronika Konečná">
-                    <h4><b><a href="https://www.researchgate.net/profile/Veronika-Konecna-2">Veronika Konečná</a></b>
+                    <div>
+                        <h4><b><a href="https://www.researchgate.net/profile/Veronika-Konecna-2">Veronika
+                                    Konečná</a></b></h4>
                         <br>
-                        Charles University, Prague, Czechia
-                    </h4>
+                        <b style="color: black;"> Charles University, Prague, Czechia </b>
+                    </div>
                 </div>
                 <div class="guest-container" data-aos="fade-up">
                     <img src="sebastien-lavergne.png" alt="Sébastien Lavergne">
-                    <h4><b><a href="http://seb.lavergne.free.fr/">Sébastien Lavergne</a></b>
+                    <div>
+                        <h4><b><a href="http://seb.lavergne.free.fr/">Sébastien Lavergne</a></b></h4>
                         <br>
-                        Laboratoire d'Ecologie Alpine, Grenoble, France
-                    </h4>
+                        <b style="color: black;">Laboratoire d'Ecologie Alpine, Grenoble, France </b>
+                    </div>
                 </div>
                 <div class="guest-container" data-aos="fade-up">
                     <img src="Katarzyna-Ostapowicz.jpg" alt="Katarzyna Ostapowicz">
-                    <h4><b><a href="https://www.researchgate.net/profile/Katarzyna-Ostapowicz">Katarzyna
-                                Ostapowicz</a></b>
+                    <div>
+                        <h4><b><a href="https://www.researchgate.net/profile/Katarzyna-Ostapowicz">Katarzyna
+                                    Ostapowicz</a></b></h4>
                         <br>
-                        Jagiellonian University, Kraków, Poland
-                    </h4>
+                        <b style="color: black;">Jagiellonian University, Kraków, Poland</b>
+                    </div>
                 </div>
             </div>
         </div>
@@ -277,12 +291,11 @@
                 <div class="case" data-aos="fade-up">
                     <h4 style="margin-block-end: 0.5em;">Coorganized & Financially supported by</h4>
                     <div>
+                        <img src="journal_of_biogeography_alt.png" alt="Journal of Biogeography">
                         <img src="nature_conservation_logo_en.jpg"
                             alt="Nature Conservation Agency of the Czech Republic">
-                        <img src="journal_of_biogeography_alt.png" alt="Journal of Biogeography">
                     </div>
-                    <h4 class="case-hidden"><b>Nature Conservation Agency of the Czech Republic & Journal of
-                            Biogeography</b></h4>
+                    <h4 class="case-hidden"><b>Journal of Biogeography & Nature Conservation Agency of the Czech Republic</b></h4>
                 </div>
             </div>
 
