@@ -111,25 +111,18 @@
                 <button class="btn btn-primary" type="button" onclick="Animate()">
                     <h4> Registration Form</h4>
                 </button>
-                <div class="off" id="animation">
+                <div class="on container" id="animation">
                     <br>
                     <div class="row">
-                        <div class="col">
+                        <div class="col-md">
                             <label for="firstName">First name*</label>
                             <input type="text" class="form-control" id="firstName" placeholder="Enter first name">
                         </div>
-                        <div class="col">
+                        <div class="col-md">
                             <label for="lastName">Last name*</label>
                             <input type="text" class="form-control" id="lastName" placeholder="Enter last name">
                         </div>
                     </div>
-                    <!--<label for="firstName">First name*</label>
-                    <input type="text" class="form-control" id="firstName" placeholder="Enter first name">
-
-
-                    <label for="lastName">Last name*</label>
-                    <input type="text" class="form-control" id="lastName" placeholder="Enter last name">-->
-
                     <label for="emailInput">Email adress*</label>
                     <input type="email" class="form-control" id="emailInput" placeholder="Enter email">
                     I want to present*:
@@ -146,7 +139,6 @@
                         <input class="form-check-input" type="radio" name="presentOptions" id="talk" value="talk">
                         <label class="form-check-label" for="talk">Talk</label>
                     </div>
-
                     <br>
                     <input type="checkbox" id="grant">
                     <label for="grant">I want to apply for a small travel grant</label>
@@ -167,18 +159,36 @@
                     <input type="checkbox" id="excursion">
                     <label for="excursion">I want to attend the postsymposium excursion</label>
                     <br>
-                    <label for="institution">Institution*</label>
-                    <input type="text" class="form-control" id="institution" placeholder="">
-                    <label for="department">Department/Division</label>
-                    <input type="text" class="form-control" id="department" placeholder="">
-                    <label for="street">Street</label>
-                    <input type="text" class="form-control" id="street" placeholder="">
-                    <label for="city">City*</label>
-                    <input type="text" class="form-control" id="city" placeholder="">
-                    <label for="zip">Postal code</label>
-                    <input type="text" class="form-control" id="zip" placeholder="">
-                    <label for="country">Country*</label>
-                    <input type="text" class="form-control" id="country" placeholder="">
+                    <div class="row">
+                        <div class="col-md">
+                            <label for="institution">Institution*</label>
+                            <input type="text" class="form-control" id="institution" placeholder="">
+                        </div>
+                        <div class="col-md">
+                            <label for="department">Department/Division</label>
+                            <input type="text" class="form-control" id="department" placeholder="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md">
+                            <label for="street">Street</label>
+                            <input type="text" class="form-control" id="street" placeholder="">
+                        </div>
+                        <div class="col-md">
+                            <label for="city">City*</label>
+                            <input type="text" class="form-control" id="city" placeholder="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md">
+                            <label for="zip">Postal code</label>
+                            <input type="text" class="form-control" id="zip" placeholder="">
+                        </div>
+                        <div class="col-md">
+                            <label for="country">Country*</label>
+                            <input type="text" class="form-control" id="country" placeholder="">
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>
@@ -449,6 +459,7 @@
             var element = document.getElementById("animation");
             element.classList.toggle("on");
             element.classList.toggle("off");
+            AOS.refresh();
         }
     </script>
 </body>

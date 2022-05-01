@@ -75,6 +75,7 @@ form {
     padding: 50px;
     background-color: white;
     color: black;
+    overflow-x: hidden;
 }
 
 input {
@@ -197,12 +198,10 @@ input {
 #animation.off {
     /*animation: turn_off 0.5s;*/
     max-height: 0px;
-    padding: 0px;
 }
 
 #animation {
     overflow-y: hidden;
-    padding: 5px;
 }
 
 @keyframes turn_on {
