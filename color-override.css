@@ -19,7 +19,8 @@ input[type="search"]:focus,
 input[type="tel"]:focus,
 input[type="color"]:focus,
 .uneditable-input:focus,
-.btn-primary:active {   
+.btn-primary:active,
+textarea:active {   
   border-color: #4e68ac;
   box-shadow: rgba(78, 104, 172, 0.3) 0px 0px 0px 3px;
   outline: 0 none;

@@ -116,19 +116,19 @@
                     <div class="row">
                         <div class="col-md">
                             <label for="firstName">First name*</label>
-                            <input type="text" class="form-control" id="firstName" placeholder="Enter first name">
+                            <input type="text" class="form-control" id="firstName" placeholder="Enter first name" required>
                         </div>
                         <div class="col-md">
                             <label for="lastName">Last name*</label>
-                            <input type="text" class="form-control" id="lastName" placeholder="Enter last name">
+                            <input type="text" class="form-control" id="lastName" placeholder="Enter last name" required>
                         </div>
                     </div>
                     <label for="emailInput">Email adress*</label>
-                    <input type="email" class="form-control" id="emailInput" placeholder="Enter email">
+                    <input type="email" class="form-control" id="emailInput" placeholder="Enter email" required>
                     I want to present*:
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="presentOptions" id="nothing" value="nothing"
-                            checked>
+                            checked required>
                         <label class="form-check-label" for="nothing">Nothing</label>
                     </div>
                     <div class="form-check form-check-inline">
@@ -162,7 +162,7 @@
                     <div class="row">
                         <div class="col-md">
                             <label for="institution">Institution*</label>
-                            <input type="text" class="form-control" id="institution" placeholder="">
+                            <input type="text" class="form-control" id="institution" placeholder="" required>
                         </div>
                         <div class="col-md">
                             <label for="department">Department/Division</label>
@@ -176,7 +176,7 @@
                         </div>
                         <div class="col-md">
                             <label for="city">City*</label>
-                            <input type="text" class="form-control" id="city" placeholder="">
+                            <input type="text" class="form-control" id="city" placeholder="" required>
                         </div>
                     </div>
                     <div class="row">
@@ -186,9 +186,24 @@
                         </div>
                         <div class="col-md">
                             <label for="country">Country*</label>
-                            <input type="text" class="form-control" id="country" placeholder="">
+                            <input type="text" class="form-control" id="country" placeholder="" required>
                         </div>
                     </div>
+                    <h3>Abstract</h3>
+                    <p>(if presenting) – the deadline for submission is <b>30 June 2022</b>,
+                        for students and early career scientists applying for a small travel grant the deadline is <b>15
+                            June 2022</b>
+                    </p>
+                    <label for="title">Title (max 150 characters excluding spaces)</label>
+                    <input type="text" class="form-control" id="title" placeholder="">
+                    <label for="authors">Authors</label>
+                    <input type="text" class="form-control" id="authors" placeholder="">
+                    <label for="affiliations">Affiliations</label>
+                    <input type="text" class="form-control" id="affiliations" placeholder="">
+                    <label for="abstract">Abstract text (max 2000 characters excluding spaces)</label>
+                    <textarea class="form-control" id="abstract" placeholder="" rows="5"></textarea>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </form>
         </div>
