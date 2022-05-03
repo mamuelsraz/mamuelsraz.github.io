@@ -19,7 +19,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
@@ -43,7 +43,7 @@
         <!--NAVBAR-------------------------------------------------------------->
         <div class="topnav" id="navbar">
             <a href="#Home" class="active">Home</a>
-            <a href="#Registration">Registration</a>
+            <a href="#Registration">Fees & Registration</a>
             <a href="#Programme">Programme</a>
             <a href="#Speakers">Invited speakers</a>
             <a href="#Venue">Venue</a>
@@ -84,30 +84,31 @@
         <!--REGISTRATION----------------------------------------------------------------->
         <div class="block negative" id="Registration">
             <div>
-                <h3>Registration</h3>
-                <p>Registration & fee details will be announced in <b>May 2022.</b> </p>
-                <p>Small amount of travel grants for presenting graduate students are planed.</p>
-
-                <p>
-                    <b>Conference fees: early registration – paid by 15 July 2022</b><br>
-                    Regular - €140 / CZK 3500 Kc
-                    <br>
-                    Student (Msc & PhD) - €90 / CZK 2250 Kc
-                </p>
-                <p>
-                    <b>Conference fees: late registration – paid after 15 July 2022</b><br>
-                    Regular - €170 / CZK 4250 Kc
-                    <br>
-                    Student (Msc & PhD) - €100 / CZK 2500 Kc
-                </p>
-                <p>
-                    Banquet dinner - €50 / CZK 1250 Kc <br>
-                    Postsymposium excursion - €25 / CZK 500 Kc
-                </p>
-                <p>Conference fees includes: admission to the conference, refreshments during coffee breaks, book of
-                    abstract, conference materials.</p>
+                <h3>Fees & Registration</h3>
+                <p><b>Conference fees: early registration – paid by July 15, 2022</b></p>
+                <div class="fee-container">
+                    <div>Regular</div>
+                    <div>€140 / CZK 3500</div>
+                    <div>Student (MSc & PhD)</div>
+                    <div>€90 / CZK 2250</div>
+                </div>
+                <p><b>Conference fees: late registration – paid after July 15, 2022</b></p>
+                <div class="fee-container">
+                    <div>Regular</div>
+                    <div>€170 / CZK 4250</div>
+                    <div>Student (MSc & PhD)</div>
+                    <div>€100 / CZK 2500</div>
+                </div>
+                <br>
+                <div class="fee-container">
+                    <div>Banquet dinner</div>
+                    <div>€50 / CZK 1250</div>
+                    <div>Postsymposium excursion</div>
+                    <div>€25 / CZK 500</div>
+                </div>
+                <br>
             </div>
-            <form action="">
+            <form action="/php/index.php" method="post">
                 <button class="btn btn-primary" type="button" onclick="Animate()">
                     <h4> Registration Form</h4>
                 </button>
@@ -116,21 +117,18 @@
                     <div class="row">
                         <div class="col-md">
                             <label for="firstName">First name*</label>
-                            <input type="text" class="form-control" id="firstName" placeholder="Enter first name" required>
+                            <input type="text" class="form-control" id="firstName" placeholder="Enter first name"
+                                required name="firstName">
                         </div>
                         <div class="col-md">
                             <label for="lastName">Last name*</label>
-                            <input type="text" class="form-control" id="lastName" placeholder="Enter last name" required>
+                            <input type="text" class="form-control" id="lastName" placeholder="Enter last name" required
+                                name="lastName">
                         </div>
                     </div>
-                    <label for="emailInput">Email adress*</label>
-                    <input type="email" class="form-control" id="emailInput" placeholder="Enter email" required>
+                    <label for="email">Email address*</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" required name="email">
                     I want to present*:
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="presentOptions" id="nothing" value="nothing"
-                            checked required>
-                        <label class="form-check-label" for="nothing">Nothing</label>
-                    </div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="presentOptions" id="poster" value="poster">
                         <label class="form-check-label" for="poster">Poster</label>
@@ -139,69 +137,77 @@
                         <input class="form-check-input" type="radio" name="presentOptions" id="talk" value="talk">
                         <label class="form-check-label" for="talk">Talk</label>
                     </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="presentOptions" id="nothing" value="nothing"
+                            checked required>
+                        <label class="form-check-label" for="nothing">I do not want to present</label>
+                    </div>
                     <br>
-                    <input type="checkbox" id="grant">
+                    <input type="checkbox" id="grant" name="grant">
                     <label for="grant">I want to apply for a small travel grant</label>
                     <p style="color:#b0b0b0; font-size: 15px;">A limited number of ‘small Journal of Biogeography travel
                         grants’ covering the conference fees, accommodation (4 nights), banquet dinner and postsymposium
                         excursion will be attributed to students (MSc & PhD) and young career researchers (up to 5 years
                         after their PhD defense) presenting their research in the form of poster or talk. The applicants
-                        should send their (i) registration and abstracts using the submission form, and (ii) CV at the
-                        contact e-mail: symposium-carpathians-2022(at)natur.cuni.cz, both documents before June 15. The
+                        should submit their (i) registration and abstract using the submission system (below), and (ii)
+                        CV at the
+                        contact e-mail: symposium-carpathians-2022(at)natur.cuni.cz, <b>both documents before June
+                            15</b>. The
                         applications will be evaluated by the Organising Committee and the applicants will be informed
                         on the results by e-mail by June 30.</p>
-                    <input type="checkbox" id="student">
+                    <input type="checkbox" id="student" name="student">
                     <label for="student">I am a student</label>
                     <br>
-                    <input type="checkbox" id="banquet">
+                    <input type="checkbox" id="banquet" name="banquet">
                     <label for="banquet">I want to attend the banquet dinner</label>
                     <br>
-                    <input type="checkbox" id="excursion">
+                    <input type="checkbox" id="excursion" name="excursion">
                     <label for="excursion">I want to attend the postsymposium excursion</label>
                     <br>
                     <div class="row">
                         <div class="col-md">
                             <label for="institution">Institution*</label>
-                            <input type="text" class="form-control" id="institution" placeholder="" required>
+                            <input type="text" class="form-control" id="institution" placeholder="" required
+                                name="institution">
                         </div>
                         <div class="col-md">
                             <label for="department">Department/Division</label>
-                            <input type="text" class="form-control" id="department" placeholder="">
+                            <input type="text" class="form-control" id="department" placeholder="" name="department">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md">
                             <label for="street">Street</label>
-                            <input type="text" class="form-control" id="street" placeholder="">
+                            <input type="text" class="form-control" id="street" placeholder="" name="street">
                         </div>
                         <div class="col-md">
                             <label for="city">City*</label>
-                            <input type="text" class="form-control" id="city" placeholder="" required>
+                            <input type="text" class="form-control" id="city" placeholder="" required name="city">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md">
                             <label for="zip">Postal code</label>
-                            <input type="text" class="form-control" id="zip" placeholder="">
+                            <input type="text" class="form-control" id="zip" placeholder="" name="zip">
                         </div>
                         <div class="col-md">
                             <label for="country">Country*</label>
-                            <input type="text" class="form-control" id="country" placeholder="" required>
+                            <input type="text" class="form-control" id="country" placeholder="" required name="country">
                         </div>
                     </div>
                     <h3>Abstract</h3>
-                    <p>(if presenting) – the deadline for submission is <b>30 June 2022</b>,
-                        for students and early career scientists applying for a small travel grant the deadline is <b>15
-                            June 2022</b>
+                    <p>The deadline for submission is <b> June 30, 2022.</b>
+                        The deadline for students and early career scientists applying for a small travel grant is<b>
+                            June 15, 2022.</b>
                     </p>
                     <label for="title">Title (max 150 characters excluding spaces)</label>
-                    <input type="text" class="form-control" id="title" placeholder="">
+                    <input type="text" class="form-control" id="title" placeholder="" name="title">
                     <label for="authors">Authors</label>
-                    <input type="text" class="form-control" id="authors" placeholder="">
+                    <input type="text" class="form-control" id="authors" placeholder="" name="authors">
                     <label for="affiliations">Affiliations</label>
-                    <input type="text" class="form-control" id="affiliations" placeholder="">
+                    <input type="text" class="form-control" id="affiliations" placeholder="" name="affiliations">
                     <label for="abstract">Abstract text (max 2000 characters excluding spaces)</label>
-                    <textarea class="form-control" id="abstract" placeholder="" rows="5"></textarea>
+                    <textarea class="form-control" id="abstract" placeholder="" rows="5" name="abstract"></textarea>
                     <br>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
@@ -212,7 +218,7 @@
             <h3>Programme</h3>
             <div class="grid-container">
                 <div class="grid-item, pad-top"><b>12 & 13 September</b></div>
-                <div class="grid-item, pad-top">talks</div>
+                <div class="grid-item, pad-top">talks & poster session</div>
                 <div class="grid-item, pad-top"><b>14 September</b></div>
                 <div class="grid-item, pad-top">post symposium excursion (vicinity of Prague)</div>
             </div>
@@ -409,7 +415,7 @@
         <div class="block" id="Publications" style="text-align: left;">
             <h3>Publications</h3>
             <p>
-                <b>The Symposium book of abstracts</b>(with ISBN & doi) containing the abstracts of talks and posters
+                <b>The Symposium book of abstracts</b> (with ISBN & doi) containing the abstracts of talks and posters
                 will be distributed
                 at the Symposium.
             </p>

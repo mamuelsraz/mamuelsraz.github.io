@@ -191,6 +191,11 @@ input {
     margin-right: 20px;
 }
 
+.fee-container {
+    display: grid;
+    grid-template-columns: 300px auto;
+}
+
 #animation.on {
     /*animation: turn_on 0.5s;*/
     max-height: 3000px;
