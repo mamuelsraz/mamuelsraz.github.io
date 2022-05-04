@@ -21,7 +21,16 @@ input[type="color"]:focus,
 .uneditable-input:focus,
 .btn-primary:active,
 textarea:active {   
-  border-color: #4e68ac;
+  border-color: #4e68ac !important;
   box-shadow: rgba(78, 104, 172, 0.3) 0px 0px 0px 3px;
   outline: 0 none;
+}
+
+.btn-check:active+.btn-primary:focus, .btn-check:checked+.btn-primary:focus, .btn-primary.active:focus, .btn-primary:active:focus, .show>.btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.25rem rgb(478, 104, 172 / 50%);
+}
+
+.form-check-input:checked {
+  background-color: #4e68ac;
+  border-color: #4e68ac;
 }
