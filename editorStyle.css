@@ -1,0 +1,113 @@
+#editor {
+    background-color: black;
+    padding: 10px;
+    color: white;
+    width: 500px;
+}
+
+.point-container{
+    width: min-content;
+    height: min-content;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 4px;
+    color: gray;
+}
+.point {
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    border-radius: 9px;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.material-symbols-rounded{
+    width: 25px;
+    height: 25px;
+}
+
+.rule-container{
+    display: flex;
+}
+
+.rule-container > span{
+    margin-right: 10px;
+}
+
+.rule-divider {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: gray;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+}
+
+.rule-add {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: gray;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: black;
+}
+
+.divider {
+    width: 100%;
+    margin-left: 5px;
+}
+
+.divider > div {
+    position: relative;
+    background-color: gray;
+    height: 1.5px;
+    top: 3.9px;
+    width: 100%;
+    border-radius: 1px;
+}
+
+.right-divider-arrow > span {
+    position: relative;
+    top: 10.35px;
+    left: -6px;
+}
+
+.black {
+    background-color: black;
+    border: 3px solid white;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.red {
+    background-color: red;
+}
+
+.white {
+    background-color: white;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.rotate-90 {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.rotate-270 {
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    transform: rotate(270deg);
+}

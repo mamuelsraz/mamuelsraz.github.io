@@ -2,486 +2,99 @@
 <html lang="en">
 
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biogeography of the Carpathians</title>
-
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="topnav.css">
-    <link rel="stylesheet" href="responsiveness.css">
-    <link rel="stylesheet" href="color-override.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sketch</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="editorStyle.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <script src="libraries/p5.min.js"></script>
 </head>
 
 <body>
-    <header>
-        <div class="banner">
-            <div><br><img src="logo.png" alt="logo" class="header-logo"></div>
-            <div>
-                <h1>BIOGEOGRAPHY OF THE CARPATHIANS</h1>
-                <h2>3RD INTERDISCIPLINARY SYMPOSIUM</h2>
-                <h2>12 - 14 September 2022</h2>
-                <h2>Prague, Czechia</h2>
-            </div>
-            <a href="#Home" style="position: absolute; top: 80%; left: 50%; transform: translateX(-50%);">
-                <img src="arrow.png" alt="arrow" style="max-width: 1cm;">
-            </a>
-        </div>
-    </header>
 
-    <main>
-        <!--NAVBAR-------------------------------------------------------------->
-        <div class="topnav" id="navbar">
-            <a href="#Home" class="active">Home</a>
-            <a href="#Registration">Fees & Registration</a>
-            <a href="#Programme">Programme</a>
-            <a href="#Speakers">Invited speakers</a>
-            <a href="#Venue">Venue</a>
-            <a href="#Organisation">Organization</a>
-            <a href="#Publications">Publications</a>
-            <a href="#Contact">Contact</a>
-            <a href="javascript:void(0);" class="icon" onclick="ResponsiveNav()">
-                <i class="fa fa-bars"></i>
-            </a>
-        </div>
-        <!--HOME----------------------------------------------------------------->
-        <div class="block" id="Home">
-            <p>
-                The third interdisciplinary symposium “Biogeography of the Carpathians” will be held in September 2022
-                in
-                Prague, Czechia.
-                The forum offers an excellent opportunity for scientists studying the biodiversity and evolution of the
-                Carpathian biota to share their most recent knowledge and to interact with others having similar
-                interests.
-                The third edition is a continuation of symposia organized in Kraków, Poland (2013) and Cluj, Romania
-                (2017),
-                and represents a platform for free exchange of ideas, research advances and future research
-                directions
-                shared by scientists connected by their common interests on diverse aspects of the Carpathian
-                biodiversity.
-            </p>
+  <template id="addTemplate">
+    <div class="material-symbols-rounded">add</div>
+  </template>
 
-            <p>These aspects, which will be discussed within the present symposium, include:</p>
-            <ul>
-                <li>Evolution, spatial distribution and past climate-induced distributional shifts of the Carpathian
-                    biota from infraspecific to ecosystem level</li>
-                <li>Carpathians in a larger biogeographical context</li>
-                <li>Impact of climate change on ecology & future range shifts of the Carpathian biota</li>
-                <li>Biological invasions: spatial patterns & impact on native biodiversity</li>
-                <li>Identification, conservation & sustainability of biodiversity hot spots</li>
-            </ul>
-        </div>
-        <!--REGISTRATION----------------------------------------------------------------->
-        <div class="block negative" id="Registration">
-            <div>
-                <h3>Fees & Registration</h3>
-                <p><b>Conference fees: early registration – paid by July 15, 2022</b></p>
-                <div class="fee-container">
-                    <div>Regular</div>
-                    <div>€140 / CZK 3500</div>
-                    <div>Student (MSc & PhD)</div>
-                    <div>€90 / CZK 2250</div>
-                </div>
-                <p><b>Conference fees: late registration – paid after July 15, 2022</b></p>
-                <div class="fee-container">
-                    <div>Regular</div>
-                    <div>€170 / CZK 4250</div>
-                    <div>Student (MSc & PhD)</div>
-                    <div>€100 / CZK 2500</div>
-                </div>
-                <br>
-                <div class="fee-container">
-                    <div>Banquet dinner</div>
-                    <div>€50 / CZK 1250</div>
-                    <div>Postsymposium excursion</div>
-                    <div>€25 / CZK 500</div>
-                </div>
-                <br>
-            </div>
-            <form action="/php/index.php" method="post">
-                <button class="btn btn-primary" type="button" onclick="Animate()">
-                    <h4> Registration Form</h4>
-                </button>
-                <div class="on container" id="animation">
-                    <br>
-                    <div class="row">
-                        <div class="col-md">
-                            <label for="firstName">First name*</label>
-                            <input type="text" class="form-control" id="firstName" placeholder="Enter first name"
-                                required name="firstName">
-                        </div>
-                        <div class="col-md">
-                            <label for="lastName">Last name*</label>
-                            <input type="text" class="form-control" id="lastName" placeholder="Enter last name" required
-                                name="lastName">
-                        </div>
-                    </div>
-                    <label for="email">Email address*</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter email" required name="email">
-                    I want to present*:
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="presentOptions" id="poster" value="poster">
-                        <label class="form-check-label" for="poster">Poster</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="presentOptions" id="talk" value="talk">
-                        <label class="form-check-label" for="talk">Talk</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="presentOptions" id="nothing" value="nothing"
-                            checked required>
-                        <label class="form-check-label" for="nothing">I do not want to present</label>
-                    </div>
-                    <br>
-                    <input type="checkbox" id="grant" name="grant">
-                    <label for="grant">I want to apply for a small travel grant</label>
-                    <p style="color:#b0b0b0; font-size: 15px;">A limited number of ‘small Journal of Biogeography travel
-                        grants’ covering the conference fees, accommodation (4 nights), banquet dinner and postsymposium
-                        excursion will be attributed to students (MSc & PhD) and young career researchers (up to 5 years
-                        after their PhD defense) presenting their research in the form of poster or talk. The applicants
-                        should submit their (i) registration and abstract using the submission system (below), and (ii)
-                        CV at the
-                        contact e-mail: symposium-carpathians-2022(at)natur.cuni.cz, <b>both documents before June
-                            15</b>. The
-                        applications will be evaluated by the Organising Committee and the applicants will be informed
-                        on the results by e-mail by June 30.</p>
-                    <input type="checkbox" id="student" name="student">
-                    <label for="student">I am a student</label>
-                    <br>
-                    <input type="checkbox" id="banquet" name="banquet">
-                    <label for="banquet">I want to attend the banquet dinner</label>
-                    <br>
-                    <input type="checkbox" id="excursion" name="excursion">
-                    <label for="excursion">I want to attend the postsymposium excursion</label>
-                    <br>
-                    <div class="row">
-                        <div class="col-md">
-                            <label for="institution">Institution*</label>
-                            <input type="text" class="form-control" id="institution" placeholder="" required
-                                name="institution">
-                        </div>
-                        <div class="col-md">
-                            <label for="department">Department/Division</label>
-                            <input type="text" class="form-control" id="department" placeholder="" name="department">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md">
-                            <label for="street">Street</label>
-                            <input type="text" class="form-control" id="street" placeholder="" name="street">
-                        </div>
-                        <div class="col-md">
-                            <label for="city">City*</label>
-                            <input type="text" class="form-control" id="city" placeholder="" required name="city">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md">
-                            <label for="zip">Postal code</label>
-                            <input type="text" class="form-control" id="zip" placeholder="" name="zip">
-                        </div>
-                        <div class="col-md">
-                            <label for="country">Country*</label>
-                            <input type="text" class="form-control" id="country" placeholder="" required name="country">
-                        </div>
-                    </div>
-                    <h3>Abstract</h3>
-                    <p>The deadline for submission is <b> June 30, 2022.</b>
-                        The deadline for students and early career scientists applying for a small travel grant is<b>
-                            June 15, 2022.</b>
-                    </p>
-                    <label for="title">Title (max 150 characters excluding spaces)</label>
-                    <input type="text" class="form-control" id="title" placeholder="" name="title">
-                    <label for="authors">Authors</label>
-                    <input type="text" class="form-control" id="authors" placeholder="" name="authors">
-                    <label for="affiliations">Affiliations</label>
-                    <input type="text" class="form-control" id="affiliations" placeholder="" name="affiliations">
-                    <label for="abstract">Abstract text (max 2000 characters excluding spaces)</label>
-                    <textarea class="form-control" id="abstract" placeholder="" rows="5" name="abstract"></textarea>
-                    <br>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-            </form>
-        </div>
-        <!--PROGRAMME----------------------------------------------------------------->
-        <div class="block" id="Programme">
-            <h3>Programme</h3>
-            <div class="grid-container">
-                <div class="grid-item, pad-top"><b>12 & 13 September</b></div>
-                <div class="grid-item, pad-top">talks & poster session</div>
-                <div class="grid-item, pad-top"><b>14 September</b></div>
-                <div class="grid-item, pad-top">post symposium excursion (vicinity of Prague)</div>
-            </div>
-        </div>
-        <!--SPEAKERS----------------------------------------------------------------->
-        <div class="block negative" id="Speakers">
-            <h3 style="margin-bottom: 5px;">Invited speakers</h3>
-            <p style="margin-top: 0px;"><b>So far confirmed</b></p>
-            <div>
-                <div class="guest-container" data-aos="fade-up">
-                    <img src="Karel-Chobot.jpg" alt="Karel Chobot">
-                    <div>
-                        <h4><b><a href="https://www.researchgate.net/profile/Karel-Chobot">Karel Chobot</a></b></h4>
-                        <br>
-                        <b style="color: black;"> Nature Conservation Agency of the Czech Republic, Prague, Czechia</b>
-                    </div>
-                </div>
-                <div class="guest-container" data-aos="fade-up">
-                    <img src="Michal-Grabowski-6.jpg" alt="Michal Grabowski">
-                    <div>
-                        <h4><b><a href="https://www.researchgate.net/profile/Michal-Grabowski-6">Michal
-                                    Grabowski</a></b></h4>
-                        <br>
-                        <b style="color: black;"> University of Łódź, Łódź, Poland </b>
-                    </div>
-                </div>
-                <div class="guest-container" data-aos="fade-up">
-                    <img src="Lubos-Halada.jpg" alt="Ľuboš Halada">
-                    <div>
-                        <h4><b><a href="https://www.researchgate.net/profile/Lubos-Halada">Ľuboš Halada</a></b></h4>
-                        <br>
-                        <b style="color: black;"> Institute of Landscape Ecology, Bratislava, Slovakia </b>
-                    </div>
-                </div>
-                <div class="guest-container" data-aos="fade-up">
-                    <img src="Michal-Horsak.jpg" alt="Michal Horsák">
-                    <div>
-                        <h4><b><a href="https://www.researchgate.net/profile/Michal-Horsak">Michal Horsák</a></b></h4>
-                        <br>
-                        <b style="color: black;"> Masaryk Univesity, Brno, Czechia</b>
-                    </div>
-                </div>
-                <div class="guest-container" data-aos="fade-up">
-                    <img src="Veronika-Konecna-2.jpg" alt="Veronika Konečná">
-                    <div>
-                        <h4><b><a href="https://www.researchgate.net/profile/Veronika-Konecna-2">Veronika
-                                    Konečná</a></b></h4>
-                        <br>
-                        <b style="color: black;"> Charles University, Prague, Czechia </b>
-                    </div>
-                </div>
-                <div class="guest-container" data-aos="fade-up">
-                    <img src="sebastien-lavergne.png" alt="Sébastien Lavergne">
-                    <div>
-                        <h4><b><a href="http://seb.lavergne.free.fr/">Sébastien Lavergne</a></b></h4>
-                        <br>
-                        <b style="color: black;">Laboratoire d'Ecologie Alpine, Grenoble, France </b>
-                    </div>
-                </div>
-                <div class="guest-container" data-aos="fade-up">
-                    <img src="Katarzyna-Ostapowicz.jpg" alt="Katarzyna Ostapowicz">
-                    <div>
-                        <h4><b><a href="https://www.researchgate.net/profile/Katarzyna-Ostapowicz">Katarzyna
-                                    Ostapowicz</a></b></h4>
-                        <br>
-                        <b style="color: black;">Jagiellonian University, Kraków, Poland</b>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--VENUE----------------------------------------------------------------->
-        <div class="block" id="Venue">
-            <div class="venue">
-                <div class="verFlex">
-                    <h3 style="margin-bottom: 1cm;">Venue</h3>
-                    <h4>Symposium venue</h4>
-                    <br>
-                    <span>Velká geologická posluchárna Lecture Hall</span>
-                    <span>Faculty of Science, Charles University</span>
-                    <span>Albertov 6</span>
-                    <span>Prague, Czech Republic</span>
-                    <span>50°4'8.174"N, 14°25'28.102"E</span>
-                </div>
-                <img src="konferencna-hala.jfif" alt="hall" data-aos="fade-up">
-            </div>
-            <br>
-            <h4>Transport</h4>
-            <p>
-                <b>Arrival by plane to Václav Havel international airport<br></b>
-                From the bus stop at Václav Havel Airport (Terminal 1 / Terminal 2) take a bus no. 119
-                direction to the terminal stop Nádraží Veleslavín where you change to a metro line A
-                to Hradčanská station where you get off and change to a tram no. 18 to Albertov where you get
-                off and walk ca 250 m
-                to Albertov 6 (duration ca 55 min).
-            </p>
-            <p><b>Arrival by train to Prague main railway station</b>
-                <br>
-                Take a tram no. 9 to Národní třída where you change to a tram no. 18 to Albertov
-                where you get off and walk ca 250 m to Albertov 6 (duration ca 20 min).
-            </p>
-            <p><b>Arrival by bus to main station Prague - Florenc</b>
-                <br>
-                Take a metro line B to Karlovo náměstí station where you change to a tram no. 14 or 18 or 24 to
-                Albertov where you get off and walk ca 250 m to Albertov 6 (duration ca 20 min).
-            </p>
-            <h4>Food</h4>
-            <p>TBA</p>
-            <h4>Accomodation</h4>
-            <p>
-                The venue is located at Albertov - the university quarter situated very close to the historical city
-                centre.
-                We recommend to stay locally and rent an apartment (available via AirBnB or Booking.com)
-                or book your accommodation in several pensions / hotels situated nearby.
-                Please make a reservation in advance as Prague belongs to the most visited cities in Europe.
-            </p>
-        </div>
-        <!--ORGANISATION----------------------------------------------------------------->
-        <div class="block negative" id="Organisation">
-            <h3>Symposium organization</h3>
-            <p></p>
-            <div style="text-align: center;">
-                <div class="case" data-aos="fade-up">
-                    <h4 style="margin-block-end: 0.5em;">Organized by</h4>
-                    <img src="natur.cuni.logo_en.svg" alt="Faculty of Science, Charles University, Prague">
-                    <h4 class="case-hidden"><b>Faculty of Science, Charles University, Prague</b></h4>
-                </div>
-                <div class="case" data-aos="fade-up">
-                    <h4>under the auspices of </h4>
-                    <h4><b>Prof. Jiří Zima, Dean of the Faculty</b></h4>
+  <template id="pointTemplate">
+    <div class="point"></div>
+  </template>
 
-                </div>
-                <div class="case" data-aos="fade-up">
-                    <h4 style="margin-block-end: 0.5em;">Coorganized & Financially supported by</h4>
-                    <div>
-                        <img src="journal_of_biogeography_alt.png" alt="Journal of Biogeography">
-                        <img src="nature_conservation_logo_en.jpg"
-                            alt="Nature Conservation Agency of the Czech Republic">
-                    </div>
-                    <h4 class="case-hidden"><b>Journal of Biogeography & Nature Conservation Agency of the Czech
-                            Republic</b></h4>
-                </div>
-            </div>
+  <template id="ruleTemplate">
+    <div class="rule-container">
+      <span class="point-container">
+      </span>
+      <span class="material-symbols-rounded">arrow_forward</span>
+      <span class="point-container">
+      </span>
+    </div>
+  </template>
 
-            <h4 style="margin-top: 1cm;">Scientific & Organizing Committee</h4>
-            <div class="horFlex">
-                <div class="grid-container">
-                    <div class="grid-item">
-                        <a href="https://www.researchgate.net/profile/Patrik-Mraz"><b>Patrik Mráz, Head of the Committee
-                                <br></b></a>
-                        Department of Botany, Faculty of Science, Charles University, Prague
-                    </div>
-                    <div class="grid-item">
-                        <a href="https://www.researchgate.net/profile/Bogdan-Iuliu-Hurdu"><b>Bogdan Iuliu Hurdu
-                                <br></b></a>
-                        Institute of Biological Research, Cluj-Napoca
-                    </div>
-                    <div class="grid-item">
-                        <b>Ivana Jongepierová<br></b>
-                        Nature Conservation Agency of the Czech Republic, Prague
-                    </div>
-                    <div class="grid-item">
-                        <a href="https://www.researchgate.net/profile/Lucie-Jurickova"><b>Lucie Juřičková<br></b></a>
-                        Department of Zoology, Faculty of Science, Charles University, Prague
-                    </div>
-                    <div class="grid-item">
-                        <a href="https://www.researchgate.net/profile/Petr-Kunes"><b>Petr Kuneš<br></b></a>
-                        Department of Botany, Faculty of Science, Charles University, Prague
-                    </div>
-                    <div class="grid-item">
-                        <a href="https://www.researchgate.net/profile/Bogdan-Iuliu-Hurdu"><b>Adam Petrusek<br></b></a>
-                        Department of Ecology, Faculty of Science, Charles University, Prague
-                    </div>
-                    <div class="grid-item">
-                        <a href="https://www.researchgate.net/profile/Mihai-Puscas-2"><b>Mihai Puşcaş<br></b></a>
-                        Botanical Garden, Babeş-Bolyai University, Cluj-Napoca
-                    </div>
-                    <div class="grid-item">
-                        <a href="https://www.researchgate.net/profile/Anna-Ronikier"><b>Anna Ronikier<br></b></a>
-                        Institute of Botany, Polish Academy of Sciences, Kraków
-                    </div>
-                    <div class="grid-item">
-                        <a href="https://www.researchgate.net/profile/Michal-Ronikier"><b>Michał Ronikier<br></b></a>
-                        Institute of Botany, Polish Academy of Sciences, Kraków
-                    </div>
-                    <div class="grid-item">
-                        <a href="https://www.researchgate.net/profile/Vladimir-Vohralik"><b>Vladimír
-                                Vohralík<br></b></a>
-                        Department of Zoology, Faculty of Science, Charles University, Prague
-                    </div>
-                </div>
-            </div>
+  <template id="dividerTemplate">
+    <div class="rule-divider">
+      <span class="material-symbols-rounded rotate-270">turn_right</span>
+      then
+      <div class="divider">
+        <div></div>
+      </div>
+      <div class="right-divider-arrow"> <span class="material-symbols-rounded rotate-90">turn_right</span></div>
+    </div>
+  </template>
+
+  <div id="editor">
+    <div id="ruleset-container">
+      <div class="rule-container">
+        <span class="point-container">
+          <div class="point"></div>
+          <div class="material-symbols-rounded">add</div>
+          <div class="material-symbols-rounded">add</div>
+          <div class="material-symbols-rounded">add</div>
+        </span>
+        <span class="material-symbols-rounded">arrow_forward</span>
+        <span class="point-container">
+          <div class="point"></div>
+          <div class="material-symbols-rounded">add</div>
+          <div class="material-symbols-rounded">add</div>
+          <div class="material-symbols-rounded">add</div>
+        </span>
+      </div>
+      <div class="rule-divider">
+        <span class="material-symbols-rounded rotate-270">turn_right</span>
+        then
+        <div class="divider">
+          <div></div>
         </div>
-        <!--PUBLICATIONS----------------------------------------------------------------->
-        <div class="block" id="Publications" style="text-align: left;">
-            <h3>Publications</h3>
-            <p>
-                <b>The Symposium book of abstracts</b> (with ISBN & doi) containing the abstracts of talks and posters
-                will be distributed
-                at the Symposium.
-            </p>
-            <p>
-                We strongly encourage the authors of contributions that are relevant to a disciplinarily and
-                geographically broad audience,
-                e.g. case studies describing highly compelling patterns and revealing mechanisms that shape biodiversity
-                in time and space,
-                and synthesis overviews across subdisciplines and organismal groups, to submit their manuscripts to
-                <b><a href="https://onlinelibrary.wiley.com/journal/13652699">Journal of Biogeography</a></b>. The manuscripts
-                meeting these criteria,
-                as assessed by the chief editors working closely with a team of associate & guest editors,
-                will enter the standard review process with the final aim to publish a topical section (6-12
-                papers) within an issue of Journal of Biogeography. The manuscripts are expected to be submitted within 3-6 months after the
-                close of the Symposium.
-                The journal’s author guidelines can be found <b><a
-                    href="https://onlinelibrary.wiley.com/page/journal/13652699/homepage/forauthors.html">here.</a></b>
-                Additional documents concerning structured abstracts and informative figures,
-                which can help maximise the impact of your science are provided on the journal’s blog:
-                <b><a href="https://journalofbiogeographynews.org/2020/03/15/structured-abstracts/">Abstracts</a></b> &
-                <b><a href="https://journalofbiogeographynews.org/2020/07/15/figures-the-art-of-science/">Figures.</a></b>
-            </p>
-        </div>
-        <!--CONTACT----------------------------------------------------------------->
-        <div class="block" id="Contact" style="text-align: left;">
-            <h3>Contact</h3>
-            <p><b><a
-                        href="mailto:symposium-carpathians-2022@natur.cuni.cz">symposium-carpathians-2022(at)natur.cuni.cz</a></b>
-            </p>
-            <p><b>Patrik Mráz:</b> +420 221 951 642</p>
-            <p><b>Viera Mrázová:</b> +420 221 951 646</p>
-        </div>
-    </main>
-
-    <footer>
-
-    </footer>
-
-    <script>
-
-        // Get the navbar
-        var navbar = document.getElementById("navbar");
-
-        /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-        function ResponsiveNav() {
-            if (navbar.className === "topnav") {
-                navbar.className += " responsive";
-            } else {
-                navbar.className = "topnav";
-            }
-        }
-
-    </script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script> AOS.init();</script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
-    <script>
-        function Animate() {
-            var element = document.getElementById("animation");
-            element.classList.toggle("on");
-            element.classList.toggle("off");
-            AOS.refresh();
-        }
-    </script>
+        <div class="right-divider-arrow"> <span class="material-symbols-rounded rotate-90">turn_right</span></div>
+      </div>
+      <div class="rule-container">
+        <span class="point-container">
+          <div class="point"></div>
+          <div class="material-symbols-rounded">add</div>
+          <div class="material-symbols-rounded">add</div>
+          <div class="material-symbols-rounded">add</div>
+        </span>
+        <span class="material-symbols-rounded">arrow_forward</span>
+        <span class="point-container">
+          <div class="point"></div>
+          <div class="material-symbols-rounded">add</div>
+          <div class="material-symbols-rounded">add</div>
+          <div class="material-symbols-rounded">add</div>
+        </span>
+      </div>
+    </div>
+    <div class="rule-add" onclick="addRule()">
+      <span class="material-symbols-rounded rotate-270">turn_right</span>
+      add rule
+    </div>
+  </div>
+  <button onclick="play()">play</button>
+  
+  <script src="classes.js"></script>
+  <script src="backend.js"></script>
+  <script src="sketch.js"></script>
+  <script src="editorBuilder.js"></script>
 </body>
 
 </html>
