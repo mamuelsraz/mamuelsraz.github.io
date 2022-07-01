@@ -1,7 +1,7 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
-  /*background-color: black;*/
 }
 
 canvas {
@@ -9,3 +9,20 @@ canvas {
   border: 5px solid white;
 }
 
+main {
+  background-color: red;
+  height: 100vh;
+}
+
+#main-holder {
+  margin: 1cm;
+  background-color: green;
+  display: flex;
+  height: 100%;
+}
+
+#display {
+  background-color: blue;
+  margin-left: 1cm;
+  width: 100%;
+}

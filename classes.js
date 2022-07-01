@@ -3,13 +3,18 @@ const Colors = {
     "black": "#000000",
     "red": "#ff0000",
     "white": "#ffffff",
-    "blue": "#3e51c9"
+    "blue": "#3e51c9",
+    "green": "#4dbd60",
+    "yellow": "#fcfc3a"
 }
 
 const RuleTypes = {
     then: 0,
     rand: 1,
-    or: 2
+    or: 2,
+    runOnce: 3,
+    runThree: 4,
+    runTen: 5
 }
 
 class ColorPoint {
@@ -29,50 +34,11 @@ class Point {
     }
 }
 
-class RuleSet {
-    constructor(rules, type) {
-        this.rules = rules;
-        this.type = type;
-    }
-
-    GetSelection(board) {
-        var selection = [];
-        switch (this.type) {
-            case RuleTypes.then:
-                for (let i = 0; i < this.rules.length; i++) {
-                    const rule = this.rules[i];
-                    selection = selection.concat(rule.GetSelection(board));
-                    if (selection.length > 0) break;
-                }
-                break;
-            case RuleTypes.rand:
-                for (let i = 0; i < this.rules.length; i++) {
-                    const rule = this.rules[i];
-                    selection = selection.concat(rule.GetSelection(board));
-                }
-                break;
-            case RuleTypes.or:
-                shuffleArray(this.rules);
-                for (let i = 0; i < this.rules.length; i++) {
-                    const rule = this.rules[i];
-                    selection = selection.concat(rule.GetSelection(board));
-                    if (selection.length > 0) break;
-                }
-                break;
-        }
-        return selection;
-    }
-}
-
 class Rule {
-    constructor(leftSide, rightSide) {
+    constructor(leftSide, rightSide, type) {
         this.leftSide = leftSide;
         this.rightSide = rightSide;
-        this.name = "";
-    }
-
-    GetSelection(board) {
-        return board.TryRule(this);
+        this.type = type;
     }
 }
 

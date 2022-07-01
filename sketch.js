@@ -1,23 +1,15 @@
-var size = 25;
+var size = 28;
 var canvasSize = 400;
 var board;
-var finalRuleSet = new RuleSet([], RuleTypes.or);
+var finalRuleSet = [];
+
 function setup() {
   createCanvas(canvasSize, canvasSize);
   noStroke();
   scale(canvasSize / size, canvasSize / size);
   frameRate(200);
 
-  /*var ruleOne = new Rule([new Point(0, 0, Colors.red), new Point(1, 0, Colors.black), new Point(2, 0, Colors.black)],
-  [new Point(0, 0, Colors.white), new Point(1, 0, Colors.white), new Point(2, 0, Colors.red)]);
-  ruleOne = InitializeRotatedRule(ruleOne);
-  var ruleTwo = new Rule([new Point(0, 0, Colors.red), new Point(2, 0, Colors.white)],
-  [new Point(0, 0, Colors.white), new Point(2, 0, Colors.red)])
-  ruleTwo = InitializeRotatedRule(ruleTwo);
-
-  var ruleset = new RuleSet([ruleOne, ruleTwo], "then");*/
   board = new Board(size, finalRuleSet);
-  //board.SetColor(10, 10, Colors.red);
   drawBoard(board);
 }
 

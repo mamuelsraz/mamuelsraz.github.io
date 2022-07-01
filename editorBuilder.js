@@ -10,7 +10,7 @@ var allRules = [];
 initialize();
 
 function initialize() {
-    ruleset = new RuleSet([], RuleTypes.then)
+    ruleset = [];
     document.addEventListener('contextmenu', event => event.preventDefault());
     pointElement = document.getElementById("pointTemplate");
     addElement = document.getElementById("addTemplate");
@@ -19,55 +19,72 @@ function initialize() {
     rulesParent = document.getElementById("ruleset-container");
     addRule();
     drawRules();
-    /*drawRule(ruleOne, null, rulesParent);*/
 }
 
 function addRule() {
-    var rule = new Rule([], [])
-    ruleset.rules.push(rule);
+    var rule = new Rule([], [], RuleTypes.then);
+    ruleset.push(rule);
     allRules.push(rule);
     drawRules();
 }
 
-function play(){
-    finalRuleSet = new RuleSet([], RuleTypes.then);
+function play() {
+    finalRuleSet = [];
 
-    for (let i = 0; i < ruleset.rules.length; i++) {
-        var rule = ruleset.rules[i];
-        rule = InitializeRotatedRule(rule);
-        rule.type = RuleTypes.or;
-        finalRuleSet.rules.push(rule);
+    for (let i = 0; i < ruleset.length; i++) {
+        var rule = ruleset[i];
+        if (rule.type == RuleTypes.runOnce) rule.runTime = 1;
+        if (rule.type == RuleTypes.runThree) rule.runTime = 3;
+        if (rule.type == RuleTypes.runTen) rule.runTime = 10;
+        var ruleRotated = InitializeRotatedRule(rule);
+        finalRuleSet = finalRuleSet.concat(ruleRotated);
     }
+
+    console.log(ruleset);
     console.log(finalRuleSet);
     setup();
 }
 
 function pushRule(event, element) {
-    if (event.which != 3) {
-        return
+    if (event.which == 2) {
+        var index = parseInt(element.dataset.index) + 1;
+        console.log("deleted index: " + index);
+        ruleset[index-1].type = ruleset[index].type;
+        ruleset.splice(index, 1);
+        drawRules();
     }
-
-    var index = element.dataset.index;
-    ruleset.rules.splice(index, 1);
-    drawRules();
+    else if (event.which == 1 || event.which == 3) {
+        var rule = ruleset[element.dataset.index];
+        if (event.which == 1)
+            rule.type += 1;
+        else rule.type -= 1;
+        if (rule.type == Object.keys(RuleTypes).length) {
+            rule.type = 0;
+        }
+        if (rule.type < 0) {
+            rule.type = Object.keys(RuleTypes).length - 1;
+        }
+        element.className = "rule-divider " + Object.keys(RuleTypes)[rule.type];
+    }
 }
 
 function drawRules() {
     rulesParent.textContent = '';
-    for (let i = 0; i < ruleset.rules.length; i++) {
-        const rule = ruleset.rules[i];
-        if (i != 0) {
-            var divider = cloneElement(dividerElement, rulesParent);
-            var index = allRules.indexOf(rule) - 1;
-            divider.dataset.index = i;
-            divider.addEventListener("mousedown", function (event) {
-                pushRule(event, this);
-            });
-        }
+    for (let i = 0; i < ruleset.length; i++) {
+        const rule = ruleset[i];
         var clone = cloneElement(ruleElement, rulesParent);
         var leftParent = clone.getElementsByClassName("point-container")[0];
         var rightParent = clone.getElementsByClassName("point-container")[1];
         drawRule(rule, rightParent, leftParent);
+
+        if (i != ruleset.length-1) {
+            var divider = cloneElement(dividerElement, rulesParent);
+            divider.dataset.index = i;
+            divider.addEventListener("mousedown", function (event) {
+                pushRule(event, this);
+            });
+            divider.className = "rule-divider " + Object.keys(RuleTypes)[rule.type];
+        }
     }
 }
 
@@ -122,33 +139,31 @@ function drawRuleSide(ruleSide, parent) {
         elementList[index].removeEventListener("click", function () {
             colorAdd(this);
         });
-        elementList[index].addEventListener("click", function () {
-            colorPushed(this);
-        });
         elementList[index].addEventListener("mousedown", function (event) {
-            colorDelete(event, this);
+            colorPushed(event, this);
         });
     }
 }
 
-function colorPushed(element) {
-    var point = allRuleSides[element.dataset.ruleSideIndex][element.dataset.index];
-    var colorIndex = Object.keys(Colors).indexOf(getKeyByValue(Colors, point.col)); //WHYYYYYYYYYYYYYYY???
-    colorIndex += 1;
-    if (colorIndex >= Object.keys(Colors).length) colorIndex = 0;
-
-    point.col = Colors[Object.keys(Colors)[colorIndex]];
-    element.className = "point " + getKeyByValue(Colors, point.col);
-}
-
-function colorDelete(event, element) {
-    if (event.which != 3) {
-        return
+function colorPushed(event, element) {
+    if (event.which == 2) {
+        var ruleSide = allRuleSides[element.dataset.ruleSideIndex];
+        var point = allRuleSides[element.dataset.ruleSideIndex][element.dataset.index];
+        ruleSide.splice(ruleSide.indexOf(point), 1);
+        drawRuleSide(ruleSide, element.parentElement);
     }
-    var ruleSide = allRuleSides[element.dataset.ruleSideIndex];
-    var point = allRuleSides[element.dataset.ruleSideIndex][element.dataset.index];
-    ruleSide.splice(ruleSide.indexOf(point), 1);
-    drawRuleSide(ruleSide, element.parentElement);
+    else if (event.which == 1 || event.which == 3) {
+        var point = allRuleSides[element.dataset.ruleSideIndex][element.dataset.index];
+        var colorIndex = Object.keys(Colors).indexOf(getKeyByValue(Colors, point.col)); //WHYYYYYYYYYYYYYYY???
+        if (event.which == 1)
+            colorIndex += 1;
+        else colorIndex -= 1;
+        if (colorIndex >= Object.keys(Colors).length) colorIndex = 0;
+        if (colorIndex < 0) colorIndex = Object.keys(Colors).length - 1;
+
+        point.col = Colors[Object.keys(Colors)[colorIndex]];
+        element.className = "point " + getKeyByValue(Colors, point.col);
+    }
 }
 
 function colorAdd(element) {

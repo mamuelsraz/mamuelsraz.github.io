@@ -1,5 +1,5 @@
 function InitializeRotatedRule(rule) {
-    ruleSet = [];
+    var ruleSet = [];
     for (let i = 0; i < 4; i++) {
         var leftSide = [];
         for (let ii = 0; ii < rule.leftSide.length; ii++) {
@@ -9,10 +9,17 @@ function InitializeRotatedRule(rule) {
         for (let ii = 0; ii < rule.rightSide.length; ii++) {
             rightSide.push(new Point(rule.rightSide[ii].x, rule.rightSide[ii].y, rule.rightSide[ii].col));
         }
-        ruleSet.push(new Rule(leftSide, rightSide));
+        var ruleType = RuleTypes.rand;
+        if (i == 3) {
+            ruleType = rule.type;
+        }
+        ruleSet.push(new Rule(leftSide, rightSide, ruleType));
+        if (i == 3) {
+            ruleSet[i].runTime = rule.runTime;
+        }
         RotateRule(ruleSet[i], i);
     }
-    return new RuleSet(ruleSet, "random");
+    return ruleSet;
 }
 
 function RotateRule(rule, rotation) {
@@ -22,7 +29,6 @@ function RotateRule(rule, rotation) {
     for (let i = 0; i < rule.rightSide.length; i++) {
         RotatePoint(rule.rightSide[i], rotation);
     }
-    rule.name = rotation;
 }
 
 function RotatePoint(point, rotation) {
@@ -42,14 +48,50 @@ function RotatePoint(point, rotation) {
 }
 
 class Board {
-    constructor(size, rule) {
+    constructor(size, rules) {
         this.size = size;
-        this.ruleSet = rule;
+        this.rules = rules;
         this.map = Array(size * size).fill(Colors.black);
     }
 
     Tick() {
-        var possiblePoints = this.ruleSet.GetSelection(this);
+        var possiblePoints = [];
+        for (let i = 0; i < this.rules.length; i++) {
+            const rule = this.rules[i];
+            if (rule.type == RuleTypes.then) {
+                if (i > 0 && this.rules[i - 1].type == RuleTypes.or) {
+                    var points = this.TryRule(rule);
+                    possiblePoints.push(points[Math.floor(Math.random() * points.length)]);
+                }
+                else possiblePoints = possiblePoints.concat(this.TryRule(rule));
+                if (possiblePoints.length > 0) break;
+                else possiblePoints = [];
+            }
+            if (rule.type == RuleTypes.runOnce || rule.type == RuleTypes.runThree || rule.type == RuleTypes.runTen) {
+                if (rule.runTime > 0) {
+                    if (i > 0 && this.rules[i - 1].type == RuleTypes.or) {
+                        var points = this.TryRule(rule);
+                        possiblePoints.push(points[Math.floor(Math.random() * points.length)]);
+                    }
+                    else possiblePoints = possiblePoints.concat(this.TryRule(rule));
+                    if (possiblePoints.length > 0) {
+                        rule.runTime -= 1;
+                        break;
+                    }
+                }
+                else possiblePoints = [];
+            }
+            if (rule.type == RuleTypes.rand) {
+                possiblePoints = possiblePoints.concat(this.TryRule(rule));
+            }
+            if (rule.type == RuleTypes.or) {
+                var points = this.TryRule(rule);
+                if (points.length > 0) {
+                    possiblePoints.push(points[Math.floor(Math.random() * points.length)]);
+                }
+            }
+        }
+
         this.ApplyRule(possiblePoints);
     }
 
@@ -85,7 +127,7 @@ class Board {
 
         for (let i = 0; i < leftSidePoints.length; i++) {
             const point = leftSidePoints[i];
-            if(!CompareColors(point.col, this.GetColor(x + point.x, y + point.y))) return false;
+            if (!CompareColors(point.col, this.GetColor(x + point.x, y + point.y))) return false;
         }
 
         return true;
@@ -121,3 +163,5 @@ function CompareColors(first, last) {
     if (first == last) return true;
     return false;
 }
+
+
