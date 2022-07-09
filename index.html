@@ -10,6 +10,9 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
   <script src="libraries/p5.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -54,19 +57,37 @@
         </div>
       </div>
       <div id="display">
-
+        <div id="canvas-pair-holder">
+          <div class="canvas-holder" id="canvas-holder-left"></div>
+          <div class="canvas-holder" id="canvas-holder-right"></div>
+        </div>
+        <h1 id="title">hello world</h1>
+        <p id="subtitle">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, voluptate?
+        </p>
+        <div id="bottom-bar">
+          <div id="buttons">
+            <span class="material-symbols-rounded bigger" onclick="play()">
+              replay
+            </span>
+            <span class="material-symbols-rounded bigger" onclick="pause()">
+              play_pause
+            </span>
+          </div>
+          <span class="material-symbols-rounded bigger" style="color: grey;">
+            help
+          </span>
+        </div>
       </div>
     </div>
-   
   </main>
- 
 
-  <button onclick="play()">play</button>
-  
   <script src="classes.js"></script>
   <script src="backend.js"></script>
-  <!--<script src="sketch.js"></script>-->
+  <script src="renderer.js"></script>
   <script src="editorBuilder.js"></script>
+  <script src="leveldata.js"></script>
+  <script src="main.js"></script>
 </body>
 
 </html>

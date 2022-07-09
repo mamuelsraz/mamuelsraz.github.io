@@ -52,9 +52,12 @@ class Board {
         this.size = size;
         this.rules = rules;
         this.map = Array(size * size).fill(Colors.black);
+        this.stop = false;
     }
 
     Tick() {
+        if(this.stop) return;
+
         var possiblePoints = [];
         for (let i = 0; i < this.rules.length; i++) {
             const rule = this.rules[i];
@@ -96,7 +99,10 @@ class Board {
     }
 
     ApplyRule(possiblePoints) {
-        if (possiblePoints.length <= 0) return;
+        if (possiblePoints.length <= 0) {
+            this.stop = true;
+            return;
+        }
         var selected = possiblePoints[Math.floor(Math.random() * possiblePoints.length)];
         var rule = selected[2];
         for (let i = 0; i < rule.rightSide.length; i++) {

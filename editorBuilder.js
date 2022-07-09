@@ -3,14 +3,13 @@ var addElement;
 var rulesParent;
 var ruleElement;
 var dividerElement;
-var ruleset;
+var ruleset = [];
 
 var allRuleSides = []; //WHY??????????
 var allRules = [];
 initialize();
 
 function initialize() {
-    ruleset = [];
     document.addEventListener('contextmenu', event => event.preventDefault());
     pointElement = document.getElementById("pointTemplate");
     addElement = document.getElementById("addTemplate");
@@ -28,28 +27,11 @@ function addRule() {
     drawRules();
 }
 
-function play() {
-    finalRuleSet = [];
-
-    for (let i = 0; i < ruleset.length; i++) {
-        var rule = ruleset[i];
-        if (rule.type == RuleTypes.runOnce) rule.runTime = 1;
-        if (rule.type == RuleTypes.runThree) rule.runTime = 3;
-        if (rule.type == RuleTypes.runTen) rule.runTime = 10;
-        var ruleRotated = InitializeRotatedRule(rule);
-        finalRuleSet = finalRuleSet.concat(ruleRotated);
-    }
-
-    console.log(ruleset);
-    console.log(finalRuleSet);
-    setup();
-}
-
 function pushRule(event, element) {
     if (event.which == 2) {
-        var index = parseInt(element.dataset.index) + 1;
+        var index = parseInt(element.dataset.index); /* + 1;*/
         console.log("deleted index: " + index);
-        ruleset[index-1].type = ruleset[index].type;
+        /*ruleset[index-1].type = ruleset[index].type;*/
         ruleset.splice(index, 1);
         drawRules();
     }
@@ -77,14 +59,14 @@ function drawRules() {
         var rightParent = clone.getElementsByClassName("point-container")[1];
         drawRule(rule, rightParent, leftParent);
 
-        if (i != ruleset.length-1) {
+       /* if (i != ruleset.length-1) {*/
             var divider = cloneElement(dividerElement, rulesParent);
             divider.dataset.index = i;
             divider.addEventListener("mousedown", function (event) {
                 pushRule(event, this);
             });
             divider.className = "rule-divider " + Object.keys(RuleTypes)[rule.type];
-        }
+        /*}*/
     }
 }
 
@@ -171,7 +153,7 @@ function colorAdd(element) {
     var ruleSide = allRuleSides[element.dataset.ruleSideIndex];
     var x = parseInt(element.dataset.x);
     var y = parseInt(element.dataset.y);
-    ruleSide.push(new Point(x, y, Colors.white));
+    ruleSide.push(new Point(x, y, Colors.black));
     drawRuleSide(ruleSide, element.parentElement);
 }
 
